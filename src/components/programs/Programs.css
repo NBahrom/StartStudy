@@ -1,0 +1,364 @@
+.section-5 {
+  background-color: #F5F5F5;
+  margin-top: 140px;
+  padding: 140px 0;
+  overflow: hidden;
+}
+
+.section-5_title {
+  margin-bottom: 25px;
+}
+
+.section-5_head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-5_slider{
+    overflow: visible;
+  }
+
+
+.tariff-toggle {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 100px;
+  background-color: var(--color-2);
+  padding: 4px;
+  position: relative;
+  margin-top: auto;
+}
+
+
+
+.tariff-toggle::after {
+  content: "";
+  position: absolute;
+  height: calc(100% - 8px);
+  width: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border-radius: 100px;
+  left: 4px;
+  transition: .3s;
+}
+
+.tariff-toggle.toggle-right::after {
+  left: calc(50% - 4px);
+}
+
+.tariff-toggle_item {
+  border-radius: 100px;
+  color: var(--dark-40);
+  padding: 16px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: .3s;
+  z-index: 1;
+}
+
+.tariff-toggle_item.active {
+  color: var(--dark);
+  cursor: default;
+}
+
+.section-5_slider .swiper-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.tariff-item_wrapper {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: initial;
+  min-height: 700px;
+}
+
+.odometer-numbers{
+  width: calc(100% + 5px);
+}
+
+
+
+.tariff-item_title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.tariff-item_data {
+  opacity: 0.5;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tariff-price_wrapper {
+  display: flex;
+  border-bottom: 1px dashed var(--dark-20);
+  padding: 32px 0 45px;
+}
+
+.tariff-price {
+  font-family: 'Inter', sans-serif;
+  color: #2F3846;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 8px;
+}
+
+.tariff_advantages_wrapper {
+  padding: 36px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tariff-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-50);
+  letter-spacing: -0.5px;
+}
+
+
+.tariff_advantages_item {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.tariff_advantages_title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+  width: calc(100% - 30px);
+}
+
+.tariff-tooltip_wrapper {
+  display: flex;
+  width: 100%;
+  margin-left: 10px;
+  gap: 5px;
+
+}
+
+@keyframes puls {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.tariff-tooltip {
+  height: 16px;
+  width: 16px;
+  /* margin-left: auto; */
+  margin-left: 7px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+
+}
+
+.tariff-tooltip::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-color: rgb(70, 191, 225, 0.2);
+  border-radius: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tariff-tooltip::after {
+  content: "";
+  width: 32px;
+  height: 32px;
+  background-color: rgb(70, 191, 225, 0.2);
+  border-radius: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: 1s puls infinite;
+}
+
+
+
+.tariff-tooltip svg {
+  position: relative;
+}
+
+.tariff-tooltip_content {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  display: none;
+  position: absolute;
+  top: calc(100% + 17px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 275px;
+  padding: 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  white-space: normal;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.tariff-tooltip_content::before {
+  content: '';
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+.tariff-tooltip:hover .tariff-tooltip_content {
+  display: block;
+}
+
+.tariff-hours {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tariff-hours_item {
+  width: calc(50% - 13px);
+}
+
+.tariff-btn.btn {
+  width: 100%;
+  margin-top: auto;
+  height: 50px;
+}
+
+@media (max-width: 992px) {
+    .section-5 {
+    margin-top: 115px;
+    padding: 80px 0 115px;
+  }
+
+  .section-5_head{
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .tariff-toggle{
+    width: 100%;
+  }
+
+  .tariff-toggle_item{
+    width: 50%;
+  }
+
+  .section-5_slider{
+    overflow: visible;
+  }
+
+  .section-5_slider .swiper-wrapper{
+    margin-top: 30px;
+  }
+
+  .section-5_slider .swiper-wrapper .tariff-item_wrapper{
+    transform: initial;
+  }
+  
+  .slider_pagination.section-5_pagination.swiper-pagination-bullets{
+    top: calc(100% + 30px);
+    position: absolute;
+  }
+}
+
+@media (max-width:767px){
+    .section-5 {
+    margin-top: 80px;
+            padding: 80px 0 97px;
+  }
+
+  .tariff-block {
+    padding: 32px;
+  }
+
+  .tariff-item {
+    padding: 28px 0;
+  }
+
+  .tariff-item_wrapper {
+    margin: 0;
+  }
+
+  .tariff-hours_item {
+    width: 50%;
+  }
+
+  .tariff-hours {
+    align-items: flex-start;
+  }
+
+  .tariff-btn {
+    width: 100%;
+  }
+
+  .tariff-tooltip_content {
+    font-size: 11px;
+    width: 169px;
+  }
+
+  .tariff-tooltip_content::before {
+    top: -11px;
+  }
+
+
+    .section-5_slider  .swiper-wrapper {
+        margin-top: 20px;
+    }
+
+    .tariff-item_wrapper{
+      padding: 27px 35px 40px;
+    }
+
+    .tariff-price_wrapper{
+      padding: 22px 0px 17px;
+    }
+
+    .tariff_advantages_wrapper{
+          padding: 27px 0;
+    }
+}

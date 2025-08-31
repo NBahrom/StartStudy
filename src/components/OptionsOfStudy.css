@@ -1,0 +1,190 @@
+.section-2 {
+  background-color: var(--block-bg);
+  width: calc(100% - 120px);
+  margin: 0 auto;
+  max-width: 1320px;
+  padding: 140px 0;
+  text-align: center;
+}
+
+.section-2_col-left {
+  width: 51%;
+}
+
+.section-2-img {
+  width: 100%;
+  height: 510px;
+  object-fit: cover;
+}
+
+.section-2_col-right {
+  width: 49%;
+  background-color: #fff;
+  padding: 60px;
+  text-align: left;
+  position: relative;
+}
+
+.section-2_title {
+  margin-bottom: 25px;
+  max-width: 448px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-2_text-1 {
+  max-width: 506px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 55px;
+}
+
+
+.section-2_slide_title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.14;
+  max-width: 323px;
+  margin-bottom: 20px;
+}
+
+.section-2_slide_text {
+  max-width: 323px;
+}
+
+
+.section-2_slider {
+  height: 100%;
+}
+
+.section-2 .section-2_slider_pagination.slider_pagination {
+  position: absolute;
+  top: initial;
+  right: 60px;
+  bottom: 60px;
+  left: initial;
+  justify-content: flex-end;
+}
+
+
+
+.section-2_btn.btn {
+  padding: 20px 32px;
+  background-color: #CCF43B;
+  color: var(--dark);
+  margin-top: 30px;
+  width: 190px;
+  position: absolute;
+  left: 60px;
+  bottom: 60px;
+  z-index: 1;
+}
+
+.section-2_btn.btn path {
+  stroke: var(--dark);
+}
+
+@media (max-width: 992px) {
+  
+
+
+
+
+  .section-2 {
+    padding: 80px 0 115px;
+    width: 100%;
+  }
+
+  .section-2-img {
+    height: 340px;
+
+  }
+
+  .section-2_col-right {
+    padding: 40px;
+  }
+
+
+  .section-2_title {
+    margin-bottom: 22px;
+  }
+
+  .section-2_text-1{
+    margin-bottom: 40px;
+  }
+
+  .section-2_slide_title{
+    max-width: initial;
+    letter-spacing: -1.5px;
+  }
+
+  .section-2_slide_text{
+    max-width: initial;
+  }
+
+  .section-2_btn.btn {
+    width: 100%;
+    position: initial;
+    margin-top: 35px;
+  }
+
+  .section-2_slider{
+
+  }
+
+  .section-2_slider_wrapper{
+
+  }
+
+
+ .section-2  .section-2_slider_pagination.slider_pagination {
+    right: initial;
+    bottom: initial;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 30px);
+  }
+
+}
+
+@media (max-width: 767px) {
+  .section-2 {
+    width: 100%;
+    padding: 60px 0 90px;
+  }
+
+  .section-2_title {
+    margin-bottom: 25px;
+    text-align: left;
+  }
+
+  .section-2_text-1{
+    text-align: left;
+  }
+
+  .section-2_spoiler .spoiler_text {
+    padding: 20px 0 0 0px;
+    line-height: 1.5;
+  }
+
+  .section-2_btn.btn {
+    margin-top: 40px;
+  }
+
+  .section-2-img {
+    object-position: top;
+    aspect-ratio: 1 / 0.65;
+    height: initial;
+  }
+
+  .section-2_col-right {
+    padding: 30px;
+    padding-bottom: 40px;
+  }
+
+  .section-2_slide_title{
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}

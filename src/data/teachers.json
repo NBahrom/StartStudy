@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "name": "Питер Ченг",
+      "subtitle": "преподаватель при ČZU",
+      "description": "Преподаватель и носитель чешского языка. Студенты находят его ответственным, дружелюбным, общительным и понимающим. Примечание: Степан также говорит по-английски.",
+      "experience": "5+",
+      "levels": "A1-C1",
+      "poster": "images/section-7-img-1.png",
+      "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+    },
+    {
+      "id": 2,
+      "name": "Ян Новак",
+      "subtitle": "преподаватель при ČVUT",
+      "description": "Опытный преподаватель, помогает студентам адаптироваться и уверенно изучать язык.",
+      "experience": "8+",
+      "levels": "A2-C2",
+      "poster": "images/section-3-img-1.jpg",
+      "video": "https://www.w3schools.com/html/movie.mp4"
+    },
+    {
+      "id": 3,
+      "name": "Карел Свобода",
+      "subtitle": "преподаватель при VŠE",
+      "description": "Студенты ценят его структурированный подход к занятиям и внимание к деталям.",
+      "experience": "10+",
+      "levels": "B1-C2",
+      "poster": "images/section-3-img-2.webp",
+      "video": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+    }
+]

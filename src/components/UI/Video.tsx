@@ -1,40 +1,51 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import styles from "./Video.module.css";
 
-import "./Video.css"
+export default function Video({
+  imageSrc,
+  videoSrc,
+  className,
+}: {
+  imageSrc: string;
+  videoSrc: string;
+  className?: string;
+}) {
+  const [play, setPlay] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-export default function Video({imageSrc, videoSrc, className} : {imageSrc: string, videoSrc: string, className?: string}) {
-    const [play, setPlay] = useState(false);
-    const videoRef = useRef<HTMLVideoElement | null>(null);
+  // Reset play state when sources change
+  useEffect(() => {
+    setPlay(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  }, [imageSrc, videoSrc]);
 
-    // Reset play state when sources change
-    useEffect(() => {
-        setPlay(false);
-        if (videoRef.current) {
-            videoRef.current.pause();
-            videoRef.current.currentTime = 0;
-        }
-    }, [imageSrc, videoSrc]);
+  // Auto play when play is set to true
+  useEffect(() => {
+    if (play && videoRef.current) {
+      videoRef.current
+        .play()
+        .catch((err) => {
+          console.warn("Autoplay failed:", err);
+        });
+    }
+  }, [play]);
 
-    // Auto play when play is set to true
-    useEffect(() => {
-        if (play && videoRef.current) {
-            videoRef.current.play()
-            .catch((err) => {
-                console.warn("Autoplay failed:", err);
-            });
-        }
-    }, [play]);
-
-    
-    return(
-    <div className={"video-wrapper " + (className ?? "")}>
+  return (
+    <div
+      className={`${styles.videoWrapper} ${play ? styles.playing : ""} ${
+        className ?? ""
+      }`}
+    >
       {!play ? (
         <div
-          className="video-mask"
+          className={styles.videoMask}
           onClick={() => setPlay(true)}
           role="button"
         >
-          <img className="video-poster" src={imageSrc} alt="poster" />
+          <img className={styles.videoPoster} src={imageSrc} alt="poster" />
           <svg xmlns="http://www.w3.org/2000/svg" width="66" height="67" fill="none">
             <rect width="66" height="66" y=".96" fill="#fff" rx="33" />
             <path
@@ -44,11 +55,11 @@ export default function Video({imageSrc, videoSrc, className} : {imageSrc: strin
           </svg>
         </div>
       ) : (
-        <video ref={videoRef} controls preload="auto">
+        <video ref={videoRef} controls preload="auto" className={styles.videoEl}>
           <source src={videoSrc} type="video/mp4" />
           Your browser does not support HTML video.
         </video>
       )}
     </div>
-    )
+  );
 }

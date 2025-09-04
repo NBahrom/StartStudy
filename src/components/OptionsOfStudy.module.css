@@ -57,7 +57,7 @@
   height: 100%;
 }
 
-.section-2 .section-2_slider_pagination.slider_pagination {
+.section-2 .section-2_slider_pagination:global(.slider_pagination) {
   position: absolute;
   top: initial;
   right: 60px;
@@ -68,7 +68,7 @@
 
 
 
-.section-2_btn.btn {
+.section-2_btn:global(.btn) {
   padding: 20px 32px;
   background-color: #CCF43B;
   color: var(--dark);
@@ -80,7 +80,7 @@
   z-index: 1;
 }
 
-.section-2_btn.btn path {
+.section-2_btn :global(path) {
   stroke: var(--dark);
 }
 

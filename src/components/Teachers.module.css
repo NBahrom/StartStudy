@@ -1,29 +1,15 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* slider-7 rules (kept as-is) */
 .slider-7 {
   overflow: visible;
   overflow-x: clip;
 }
 
-
-
-.slider-7.swiper .slider-7_pagination {
+.slider-7.swiper :global(.slider-7_pagination) {
   bottom: initial;
   top: calc(100% + 35px);
 }
 
-.slider-7.swiper .slider-7_pagination .swiper-pagination-bullet {
+.slider-7.swiper :global(.slider-7_pagination) :global(.swiper-pagination-bullet) {
   width: 16px;
   border-radius: 0;
   height: 2px;
@@ -32,11 +18,12 @@
   transition: .3s;
 }
 
-.slider-7.swiper .slider-7_pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.slider-7.swiper :global(.slider-7_pagination) :global(.swiper-pagination-bullet.swiper-pagination-bullet-active) {
   width: 36px;
   background-color: #CCF43B;
 }
 
+/* section-7 styles (kept names exactly as you provided) */
 .section-7 {
   padding: 135px 0 145px;
   text-align: center;
@@ -47,7 +34,7 @@
   background-color: #F5F5F5;
   padding: 70px;
   padding-right: 50px;
-      padding-bottom: 58px;
+  padding-bottom: 58px;
   text-align: left;
   position: relative;
   height: 510px;
@@ -61,7 +48,6 @@
 
 .section-7_col-right {
   width: 50%;
-  
 }
 
 .section-7_title {
@@ -78,7 +64,6 @@
   margin-bottom: 55px;
 }
 
-
 .section-7_slide_title {
   font-size: 28px;
   font-weight: 600;
@@ -87,39 +72,39 @@
   margin-bottom: 20px;
 }
 
-.section-7_slide_text{
+.section-7_slide_text {
   line-height: 1.3;
 }
 
-.section-7_experience_wrapper{
+.section-7_experience_wrapper {
   margin-top: 28px;
   display: flex;
   gap: 50px;
 }
 
-.section-7_experience_item{
+.section-7_experience_item {
   width: 140px;
 }
 
-.section-7_experience_title{
+.section-7_experience_title {
   font-size: 40px;
   font-weight: 500;
 }
 
-.section-7_experience_text{
+.section-7_experience_text {
   font-size: 14px;
 }
 
-.section-7_experience_separator{
+.section-7_experience_separator {
   border: 0.5px dashed rgba(2, 25, 29, 0.2);
 }
-
 
 .section-7_slider {
   height: 100%;
 }
 
-.section-7_slider_pagination.swiper-pagination-bullets {
+/* pagination — keep swiper class global, but scope to our module's pagination container */
+.section-7_slider_pagination:global(.swiper-pagination-bullets) {
   position: absolute;
   bottom: 60px !important;
   left: 60px !important;
@@ -127,9 +112,8 @@
   top: initial !important;
 }
 
-
+/* responsive */
 @media (max-width: 992px) {
-    
   .section-7 {
     padding-top: 0;
     padding-bottom: 80px;
@@ -139,37 +123,40 @@
     margin-bottom: 20px;
   }
 
-  .section-7_text-1{
+  .section-7_text-1 {
     margin-bottom: 40px;
   }
 
-  .section-row.section-7_row{
+  /* remove global dependency from module selector per your rule:
+     original .section-row.section-7_row was using section-row only for specificity.
+     Keep section-7_row local and add section-row globally in JSX */
+  .section-7_row:global(.section-row) {
     flex-direction: column-reverse;
   }
 
-  .section-7_col-right{
+  .section-7_col-right {
     height: 388px;
   }
 
-  .video-wrapper{
+  .video-wrapper {
     max-width: initial;
   }
 
-  .section-7_col-left{
+  .section-7_col-left {
     padding: 60px;
     height: initial;
   }
 
-  .section-7_experience_wrapper{
+  .section-7_experience_wrapper {
     gap: 0;
   }
 
-  .section-7_experience_separator{
+  .section-7_experience_separator {
     margin-left: 7px;
     margin-right: 40px;
   }
 
-  .section-7_slider_pagination.swiper-pagination-bullets{
+  .section-7_slider_pagination:global(.swiper-pagination-bullets) {
     bottom: initial !important;
     left: 50% !important;
     transform: translateX(-50%);
@@ -177,9 +164,8 @@
   }
 }
 
-@media (max-width:767px) {
-    .section-7 {
-    
+@media (max-width: 767px) {
+  .section-7 {
     padding-bottom: 80px;
   }
 
@@ -188,7 +174,7 @@
     padding-right: 10px;
   }
 
-  .section-7_item .spoiler_plus_wrapper {
+  .section-7_item :global(.spoiler_plus_wrapper) {
     width: 50px;
     height: 50px;
   }
@@ -197,40 +183,39 @@
     width: 100%;
   }
 
-  .section-7_item .spoiler_text {
+  .section-7_item :global(.spoiler_text) {
     padding: 20px 0px 0 30px;
   }
 
-  .section-7_text-1{
+  .section-7_text-1 {
     text-align: left;
   }
 
-  .section-7_text-1 br{
+  .section-7_text-1 br {
     display: none;
   }
 
   .section-7_col-right {
-        height: 170px;
-    }
+    height: 170px;
+  }
 
-        .section-7_col-left {
-        padding: 40px 35px 66px;
-      }
+  .section-7_col-left {
+    padding: 40px 35px 66px;
+  }
 
+  .section-7_slide_title {
+    margin-bottom: 15px;
+  }
 
-      .section-7_slide_title{
-        margin-bottom: 15px;
-      }
-
-  .section-7_experience_title{
+  .section-7_experience_title {
     font-size: 35px;
   }
 
-  .section-7_experience_wrapper{
+  .section-7_experience_wrapper {
     font-size: 20px;
   }
 
-  .section-7_experience_text{
+  .section-7_experience_text {
     font-size: 12px;
   }
 }

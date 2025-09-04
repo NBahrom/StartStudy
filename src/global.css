@@ -390,6 +390,59 @@ body.hidden {
   animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
+.swiper-pagination-bullet {
+  width: 16px;
+  border-radius: 0;
+  height: 2px;
+  background-color: #D5D5D5;
+  opacity: 1;
+  transition: .3s;
+}
+
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 36px;
+  background-color: #CCF43B;
+}
+
+
+.section-text-2{
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  color: var(--dark-50);
+}
+
+
+.section-1_inner .section-text-2 ul {
+    list-style-type: none;
+}
+
+.section-1_inner .section-text-2 ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.section-1_inner .section-text-2 b {
+    color: var(--dark);
+}
+
+.section-1_inner .section-text-2 ul li::before {
+    position: absolute;
+    left: 0px;
+    content: "— ";
+}
+
+.section-text-1 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+}
+
+
+
 @keyframes shake {
 
   10%,
@@ -485,4 +538,10 @@ body.hidden {
     line-height: 1;
     text-align: left;
   }
+    .section-text-2{
+    line-height: 1.45;
+  }
+
+
+
 }

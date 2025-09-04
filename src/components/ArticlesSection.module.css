@@ -53,19 +53,6 @@
 
 }
 
-.section-11_inner .section-11_slider_pagination .swiper-pagination-bullet {
-  width: 16px;
-  border-radius: 0;
-  height: 2px;
-  background-color: #D5D5D5;
-  opacity: 1;
-  transition: .3s;
-}
-
-.section-11_inner .section-11_slider_pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 36px;
-  background-color: #CCF43B;
-}
 
 @media(max-width: 992px){
     

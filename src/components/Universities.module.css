@@ -1,0 +1,238 @@
+/* Swiper globals */
+:global(.swiper.slider-1) {
+  /* max-width: 550px; */
+  width: 796px;
+  overflow: visible;
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+:global(.swiper .swiper-slide.slider-1_item) {
+  width: 100% !important;
+  height: 493px;
+}
+
+:global(.swiper .swiper-slide.slider-1_item:first-child) {
+  margin-left: calc(-100% - 20px);
+}
+
+:global(.slider-1.swiper .swiper-wrapper) {
+  display: flex;
+  align-items: center;
+  transform: translate3d(0px, 0, 0) !important;
+}
+
+:global(.slider-1.swiper img) {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+}
+
+/* Local section styles (kept hyphen names as you provided) */
+.section-6 {
+  padding: 140px 0 0;
+  overflow: hidden;
+}
+
+.section-6_col-left {
+  width: 40%;
+}
+
+.section-6_col-right {
+  width: 51%;
+}
+
+.section-6_tabs {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.section-6_tabs.desktop {
+  display: none;
+}
+
+.section-6_tab {
+  opacity: 0.3;
+  transition: .3s;
+}
+
+.section-6_tab:hover {
+  opacity: 1;
+}
+
+/* this relies on adding the literal 'active' class in the DOM */
+.section-6_tab:global(.active) {
+  opacity: 1;
+}
+
+.section-6_content {
+  display: none;
+}
+
+.section-6_content:global(.active) {
+  display: block;
+}
+
+.section-6_title {
+  font-size: 40px;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.section-6 .section-text-1 {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* target global section-row inside local .section-6 */
+.section-6 :global(.section-row) {
+  margin-bottom: 100px;
+}
+
+.section-6_item {
+  padding: 19px 20px 19px 17px;
+  border-top: 1px dashed var(--dark-20);
+  position: relative;
+}
+
+.section-6_item::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--dark);
+  border-radius: 20px;
+  left: 0;
+  top: 28px;
+}
+
+/* responsive */
+@media (max-width: 992px) {
+  :global(.slider-1.swiper) {
+    max-width: initial;
+    width: calc(100% + 120px);
+    position: relative;
+    left: -60px;
+  }
+
+  :global(.swiper .swiper-slide.slider-1_item) {
+    width: initial !important;
+    height: 403px;
+  }
+
+  :global(.swiper .swiper-slide.slider-1_item:first-child) {
+    margin-left: initial;
+  }
+
+  :global(.slider-1.swiper .swiper-wrapper) {
+    gap: 0;
+  }
+
+  .section-6 {
+    padding: 80px 0;
+  }
+
+  /* removed dependency on .section-row per your rule: keep local selector only */
+  .section-6_col-left {
+    width: 34%;
+  }
+
+  .section-6_col-right {
+    width: 64%;
+  }
+
+  .section-6 :global(.section-row) {
+    margin-bottom: 60px;
+    flex-direction: row;
+  }
+
+  .section-6_title {
+    font-size: 35px;
+  }
+
+  .section-6_tab {
+    text-align: left;
+  }
+
+  /* kept original reference to slider-2_item if present elsewhere */
+  :global(.slider-2_item img) {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-6 {
+    padding: 60px 0;
+  }
+
+  .section-6 :global(.section-row) {
+    flex-direction: column;
+  }
+
+  /* removed .section-row prefix from these local width rules */
+  .section-6_col-left {
+    width: 100%;
+  }
+
+  .section-6_col-right {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .section-6_row {
+    position: relative;
+  }
+
+  .section-6_tabs {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    white-space: nowrap;
+    margin-top: 0;
+    overflow-x: scroll;
+    width: calc(100% + 70px);
+    position: absolute;
+    left: -35px;
+    top: 163px;
+    padding-left: 35px;
+    padding-right: 35px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .section-6_tab {
+    padding: 10px 20px;
+    background-color: #F5F5F5;
+    border-radius: 100px;
+    font-size: 13px;
+    opacity: 1;
+    color: rgba(2, 25, 29, 0.3);
+  }
+
+  .section-6_tab:global(.active) {
+    background-color: #02191D;
+    color: #fff;
+  }
+
+  .section-6_title {
+    margin-bottom: 83px;
+    height: 96px;
+  }
+
+  :global(.swiper .swiper-slide.slider-1_item) {
+    height: 265px;
+  }
+
+  .section-6_col-right {
+    margin-top: 30px;
+  }
+
+  .section-6_item {
+    padding-right: 0;
+  }
+}

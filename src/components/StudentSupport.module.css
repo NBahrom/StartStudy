@@ -2,6 +2,7 @@
   padding: 140px 0 105px;
 }
 
+/* we target the .section-3_col element (nth-child rules remain) */
 .section-3_col:nth-child(1) {
   width: 51%;
 }
@@ -18,16 +19,17 @@
   margin-top: 10px;
 }
 
-.section-3_spoiler .spoiler_item:first-child {
+/* keep Spoiler internals global so the Spoiler component (which renders these classes)
+   is styled without changing Spoiler's code */
+.section-3_spoiler :global(.spoiler_item:first-child) {
   border-top: none;
 }
 
-.section-3_spoiler .spoiler_item:last-child {
+.section-3_spoiler :global(.spoiler_item:last-child) {
   border-bottom: none;
 }
 
-
-.section-3_spoiler .spoiler_head {
+.section-3_spoiler :global(.spoiler_head) {
   flex-direction: row-reverse;
   justify-content: flex-start;
   padding-left: 0;
@@ -35,7 +37,8 @@
   align-items: center;
 }
 
-.spoiler_plus {
+/* make Spoiler plus/lines global too */
+:global(.spoiler_plus) {
   width: 58px;
   height: 58px;
   min-width: 58px;
@@ -47,28 +50,27 @@
   margin-top: 0;
 }
 
-.spoiler_plus_line {
+:global(.spoiler_plus_line) {
   width: 13px;
 }
 
-.spoiler_plus::after {
+/* pseudo element on global class */
+:global(.spoiler_plus)::after {
   height: 13px;
 }
 
-.section-3_spoiler .spoiler_text {
+.section-3_spoiler :global(.spoiler_text) {
   padding: 0px 0px 0 80px;
   font-size: 14px;
 }
 
-
+/* responsive */
 @media (max-width: 992px) {
-  
-
   .section-3 {
     padding: 80px 0 50px;
   }
 
-  .section-3_title{
+  .section-3_title {
     margin-bottom: 40px;
   }
 
@@ -76,34 +78,32 @@
     margin-bottom: 140px;
   }
 
-  .spoiler_item{
+  :global(.spoiler_item) {
     padding: 29px 0;
   }
 }
 
-
 @media (max-width: 767px) {
-   .spoiler_text {
+  :global(.spoiler_text) {
     padding: 20px 0px 0 30px;
   }
 
-  .spoiler_head {
+  :global(.spoiler_head) {
     font-size: 20px;
     line-height: 1.2;
     padding-left: 16px;
   }
 
-
   .section-3 {
     padding: 60px 0 18px;
   }
 
-  .section-3_title{
+  .section-3_title {
     letter-spacing: -1px;
     margin-bottom: 34px;
   }
 
-  .section-3_title br{
+  .section-3_title br {
     display: none;
   }
 
@@ -115,17 +115,17 @@
     position: initial;
   }
 
-  .section-3_spoiler .spoiler_head{
+  /* adjust spoiler layout on small screens */
+  .section-3_spoiler :global(.spoiler_head) {
     flex-direction: row;
   }
 
-  .section-3_spoiler .spoiler_text{
+  .section-3_spoiler :global(.spoiler_text) {
     padding-left: 0;
     padding-right: 80px;
   }
 
-  .section-3_spoiler .spoiler_head{
+  .section-3_spoiler :global(.spoiler_head) {
     gap: 25px;
   }
-
-}   
+}

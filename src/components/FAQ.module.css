@@ -1,23 +1,23 @@
-.section-10{
+.section10 {
   padding-bottom: 140px;
 }
 
-.section-10_title{
+.section10Title {
   text-align: center;
   margin-bottom: 60px;
 }
 
-
-.section-10_item .spoiler_title{
+/* Use :global for spoiler classes */
+.section10Item :global(.spoiler_title) {
   margin-top: 13px;
   width: calc(100% - 70px);
 }
 
-.section-10_item .spoiler_number {
+.section10Item :global(.spoiler_number) {
   top: 13px;
 }
 
-.section-10_item .spoiler_plus_wrapper{
+.section10Item :global(.spoiler_plus_wrapper) {
   width: 58px;
   height: 58px;
   background-color: var(--color-1);
@@ -28,18 +28,18 @@
   margin-left: auto;
 }
 
-.section-10_item .spoiler_plus{
+.section10Item :global(.spoiler_plus) {
   margin: 0;
   width: 13px;
   height: 13px;
 }
 
-.section-10_item .spoiler_text {
+.section10Item :global(.spoiler_text) {
   padding: 7px 100px 0 33px;
   line-height: 1.4;
 }
 
-.section-10_more.btn{
+.section10More {
   background-color: initial;
   border: 1px solid var(--color-2);
   border-radius: 100px;
@@ -52,56 +52,49 @@
   letter-spacing: 0;
 }
 
-.section-10_spoiler .spoiler_item:last-child{
-    border-bottom: none;
+.section10Spoiler :global(.spoiler_item:last-child) {
+  border-bottom: none;
 }
 
-.section-10_more svg{
+.section10More svg {
   transform: rotate(90deg);
   margin-left: 10px;
 }
 
-/* .section-10_spoiler:not(.section-10_spoiler_more) .section-10_item:nth-child(n+6){
-  display: none;
-} */
-
-
-
-@media(max-width: 992px){
-    .section-10{
+/* Responsive */
+@media (max-width: 992px) {
+  .section10 {
     padding-bottom: 80px;
   }
 
-  .section-10_title{
+  .section10Title {
     font-size: 35px;
     margin-bottom: 40px;
   }
 
-  .section-10_more{
+  .section10More {
     width: 100%;
     margin-top: 10px;
   }
 }
 
-@media(max-width:767px){
-    .section-10_item .spoiler_title {
-      margin-top: 7px;
-      width: calc(100% - 70px);
+@media (max-width: 767px) {
+  .section10Item :global(.spoiler_title) {
+    margin-top: 7px;
+    width: calc(100% - 70px);
   }
 
-
-
-  .section-10_item .spoiler_number {
+  .section10Item :global(.spoiler_number) {
     top: 6px;
     left: 0;
   }
 
-  .section-10_item .spoiler_text{
+  .section10Item :global(.spoiler_text) {
     padding: 12px 0 0;
     font-size: 14px;
   }
 
-    .section-10 {
-      padding-bottom: 60px;
+  .section10 {
+    padding-bottom: 60px;
   }
 }

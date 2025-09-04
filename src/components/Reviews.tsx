@@ -1,46 +1,47 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import Video from "./UI/Video"
+import Video from "./UI/Video";
 
 import { Swiper as SwiperType } from "swiper";
 
-import reviews from "../data/reviews.json"
+import reviews from "../data/reviews.json";
 
-import "./Reviews.css"
+import styles from "./Reviews.module.css";
 
 export default function Reviews() {
-    const [activeReview, setActiveReview] = useState(reviews[0]);
+  const [activeReview, setActiveReview] = useState(reviews[0]);
 
   return (
-    <section className="section-9">
+    <section className={styles.section9}>
       <div className="container-wide">
-        <div className="section-9_inner">
-          <div className="section-9_head">
-            <div className="section-9_head_content">
-              <div data-section4-tag="" className="main-tag section-9_tag">
+        <div className={styles.section9Inner}>
+          <div className={styles.section9Head}>
+            <div className={styles.section9HeadContent}>
+              <div data-section4-tag="" className={`main-tag ${styles.section9Tag}`}>
                 ваши отзывы
               </div>
-              <h2 className="section-title section-9_title">Отзывы</h2>
+              <h2 className={`section-title ${styles.section9Title}`}>Отзывы</h2>
             </div>
-            <div className="section-9_text section-text-2">
+
+            <div className={`${styles.section9Text} section-text-2`}>
               Мы гордимся сотрудничеством с ведущими компаниями, которые помогают
               нам достигать высоких результатов и реализовывать самые амбициозные
               проекты.
             </div>
           </div>
 
-          <div className="section-9_reviews section-row">
-
-            <div className="section-col section-9_col-left">
+          <div className={`${styles.section9Reviews} section-row`}>
+            {/* LEFT: Slider */}
+            <div className={`${styles.section9ColLeft} section-col`}>
               <Swiper
                 modules={[Navigation, Pagination]}
                 navigation={{
-                  nextEl: ".section-9_slider_nav_next",
-                  prevEl: ".section-9_slider_nav_prev",
+                  nextEl: `.section-9_slider_nav_next`,
+                  prevEl: `.section-9_slider_nav_prev`,
                 }}
                 pagination={{
-                  el: ".section-9_slider_pagination",
+                  el: `.${styles.section9SliderPagination}`,
                   clickable: true,
                 }}
                 loop={true}
@@ -53,18 +54,18 @@ export default function Reviews() {
                 onInit={(swiper: SwiperType) => {
                   setActiveReview(reviews[swiper.realIndex]);
                 }}
-                className="section-9_slider"
+                className={styles.section9Slider}
               >
                 {reviews.map((review) => (
-                  <SwiperSlide key={review.id} className="section-9_slide">
-                    <div className="section-9_slide_text">{review.text}</div>
-                    <div className="section-9_slide_name">{review.name}</div>
-                    <div className="section-9_slide_age">{review.age}</div>
+                  <SwiperSlide key={review.id} className={styles.section9Slide}>
+                    <div className={styles.section9SlideText}>{review.text}</div>
+                    <div className={styles.section9SlideName}>{review.name}</div>
+                    <div className={styles.section9SlideAge}>{review.age}</div>
                   </SwiperSlide>
                 ))}
               </Swiper>
 
-              <div className="section-9_slider_nav section-9_slider_nav_prev">
+              <div className={`${styles.section9SliderNav} section-9_slider_nav_prev`}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" fill="none">
                   <path
                     stroke="#02191D"
@@ -75,7 +76,8 @@ export default function Reviews() {
                   />
                 </svg>
               </div>
-              <div className="section-9_slider_nav section-9_slider_nav_next">
+
+              <div className={`${styles.section9SliderNav} section-9_slider_nav_next`}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" fill="none">
                   <path
                     stroke="#02191D"
@@ -87,16 +89,13 @@ export default function Reviews() {
                 </svg>
               </div>
 
-              <div className="section-9_slider_pagination slider_pagination"></div>
+              <div className={`slider_pagination ${styles.section9SliderPagination}`}></div>
             </div>
 
             {/* RIGHT: Video */}
-            <div className="section-col section-9_col-right">
+            <div className={`${styles.section9ColRight} section-col`}>
               {activeReview && (
-                <Video
-                  imageSrc={activeReview.poster}
-                  videoSrc={activeReview.video}
-                />
+                <Video imageSrc={activeReview.poster} videoSrc={activeReview.video} />
               )}
             </div>
           </div>

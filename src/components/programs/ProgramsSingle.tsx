@@ -84,7 +84,7 @@ export default function ProgramsSingle({title, from, to, fullPrice, dividedPrice
                     )
                 })}
             </div>
-            <a href="#section-8" className={`tariff-btn btn arrow-right ${index % 2 != 0 ? "green" : ""}`}>
+            <a href="#section-8" className={`tariff-btn btn arrow-right ${index % 2 !== 0 ? "green" : ""}`}>
                 <span data-section1-tariff-button="">Подробнее</span>
             </a>
         </div>

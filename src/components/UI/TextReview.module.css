@@ -1,0 +1,64 @@
+.textBlock{
+    width: 100%;
+    min-height: 406px;
+    padding: 32px;
+    background-color: var(--color-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -3%;
+    color: var(--dark);
+    margin-bottom: 56px;
+}
+
+.author{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.author img{
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.authorInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.name{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -3%;
+    color: var(--dark);
+}
+
+.age{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -3%;
+    color: var(--dark-50);
+}
+
+@media (max-width: 992px) {
+    .textBlock{
+        min-height: 456px;
+        padding: 20px;
+    }
+
+    .text{
+        margin-bottom: 40px;
+    }
+}

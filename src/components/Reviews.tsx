@@ -94,7 +94,7 @@ export default function Reviews() {
 
             {/* RIGHT: Video */}
             <div className={`${styles.section9ColRight} section-col`}>
-              {activeReview && (
+              {activeReview.video && (
                 <Video imageSrc={activeReview.poster} videoSrc={activeReview.video} />
               )}
             </div>

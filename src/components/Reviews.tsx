@@ -10,7 +10,8 @@ import reviews from "../data/reviews.json";
 import styles from "./Reviews.module.css";
 
 export default function Reviews() {
-  const [activeReview, setActiveReview] = useState(reviews[0]);
+  const defaultReviews = reviews.filter((review) => review.type === "default");
+  const [activeReview, setActiveReview] = useState(defaultReviews[0]);
 
   return (
     <section className={styles.section9}>
@@ -49,19 +50,19 @@ export default function Reviews() {
                 slidesPerView={1}
                 onSlideChange={(swiper: SwiperType) => {
                   const realIndex = swiper.realIndex;
-                  setActiveReview(reviews[realIndex]);
+                  setActiveReview(defaultReviews[realIndex]);
                 }}
                 onInit={(swiper: SwiperType) => {
-                  setActiveReview(reviews[swiper.realIndex]);
+                  setActiveReview(defaultReviews[swiper.realIndex]);
                 }}
                 className={styles.section9Slider}
               >
-                {reviews.map((review) => (
-                  <SwiperSlide key={review.id} className={styles.section9Slide}>
-                    <div className={styles.section9SlideText}>{review.text}</div>
-                    <div className={styles.section9SlideName}>{review.name}</div>
-                    <div className={styles.section9SlideAge}>{review.age}</div>
-                  </SwiperSlide>
+                {defaultReviews.map((review) => (
+                    <SwiperSlide key={review.id} className={styles.section9Slide}>
+                      <div className={styles.section9SlideText}>{review.text}</div>
+                      <div className={styles.section9SlideName}>{review.name}</div>
+                      <div className={styles.section9SlideAge}>{review.age}</div>
+                    </SwiperSlide>
                 ))}
               </Swiper>
 

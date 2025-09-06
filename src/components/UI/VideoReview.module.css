@@ -30,6 +30,18 @@
     line-height: 140%;
     letter-spacing: -3%;
     color: #FFFFFF;
+}
+
+.title{
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -3%;
+    color: #FFFFFF;
+}
+
+.videoInfo{
     position: absolute;
     bottom: 32px;
     left: 32px;

@@ -1,5 +1,5 @@
 import styles from './VideoReview.module.css'
-export default function VideoReview({videoSrc, imageSrc, name, age}: {videoSrc: string, imageSrc: string, name: string, age: string}) {
+export default function VideoReview({videoSrc, imageSrc, name, title, age}: {videoSrc: string, imageSrc: string, name: string, title: string, age: string}) {
     return(
         <div style={{backgroundImage: `url(${imageSrc})`}} className={styles.videoBlock}>
             <div className={styles.mask}></div>
@@ -9,8 +9,8 @@ export default function VideoReview({videoSrc, imageSrc, name, age}: {videoSrc: 
                 </svg>
             </div>
 
-            <div>
-                {/* <p className={styles.text}>{text}</p> */}
+            <div className={styles.videoInfo}>
+                <p className={styles.title}>{title}</p>
                 <span className={styles.name}>{name}, {age} года</span>
             </div>
         </div>

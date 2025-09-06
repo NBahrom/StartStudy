@@ -1,8 +1,6 @@
-import { useState } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-
-import { Swiper as SwiperType } from "swiper";
 
 import reviews from "../data/reviews.json";
 
@@ -11,7 +9,6 @@ import VideoReview from "./UI/VideoReview";
 import TextReview from "./UI/TextReview";
 
 export default function ReviewStudents() {
-  const [activeReview, setActiveReview] = useState(reviews[0]);
 
   return (
     <section className={styles.section}>
@@ -47,13 +44,6 @@ export default function ReviewStudents() {
                 speed={400}
                 slidesPerView={3}
                 spaceBetween={20}
-                onSlideChange={(swiper: SwiperType) => {
-                  const realIndex = swiper.realIndex;
-                  setActiveReview(reviews[realIndex]);
-                }}
-                onInit={(swiper: SwiperType) => {
-                  setActiveReview(reviews[swiper.realIndex]);
-                }}
                 className={styles.slider}
                 breakpoints={
                     { 
@@ -79,13 +69,15 @@ export default function ReviewStudents() {
                 {reviews.map((review) => {                    
                     
                     return (
-                        <SwiperSlide key={review.id} className={styles.slide}>
-                           {review.video ? (
-                            <VideoReview videoSrc={review.video} imageSrc={review.poster} name={review.name} age={review.age} />
-                           ) : (
-                            <TextReview  imageSrc={review.poster} name={review.name} age={review.age} text={review.text} />
-                           )}           
-                        </SwiperSlide>
+                        review.type === "students" && (
+                            <SwiperSlide key={review.id} className={styles.slide}>
+                            {review.video ? (
+                                <VideoReview videoSrc={review.video} title={review.title} imageSrc={review.poster} name={review.name} age={review.age} />
+                            ) : (
+                                <TextReview  imageSrc={review.poster} name={review.name} age={review.age} text={review.text} />
+                            )}           
+                            </SwiperSlide>
+                        )
                     )
                         
                 })}

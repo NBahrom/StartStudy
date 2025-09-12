@@ -65,7 +65,7 @@ export default function ArticlesSection() {
             ))}
           </Swiper>
 
-          <div className={styles.section11SliderPagination}></div>
+          <div className={`slider_pagination ${styles.section11SliderPagination}`}></div>
         </div>
       </div>
     </div>

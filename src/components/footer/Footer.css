@@ -1,6 +1,6 @@
 .footer {
   background-color: var(--dark);
-  padding: 95px 0 85px;
+  padding: 90px 0 90px;
   color: #FFF;
 }
 
@@ -21,12 +21,16 @@
   font-weight: 500;
 }
 
-.footer_menu_wrapper .header-menu_item::before{
-  background-color: #fff;
+.footer_menu_wrapper .header-menu_item:hover{
+  color: #FFFfff75;
 }
 
+/* .footer_menu_wrapper .header-menu_item::before{
+  background-color: #fff;
+} */
+
 .footer_menu_wrapper .header-menu_wrapper{
-  gap: 55px;
+  gap: 59px;
 }
 
 .footer_line {
@@ -97,8 +101,8 @@
 .subscribe-form_success {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: -1px;
+  width: 101%;
   height: 100%;
   background-color: #1B3034;
   border-radius: 72px;
@@ -119,9 +123,9 @@
 
 
 .subscribe-form_policy {
-  color: rgb(255, 255, 255, 0.3);
-  font-size: 14px;
-  line-height: 1.4;
+  color: rgb(255, 255, 255, 0.3) !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
 }
 
 .subscribe-form_policy a {
@@ -142,13 +146,17 @@
   max-width: 224px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
 .contact_title {
   color: rgb(255, 255, 255, 0.3);
   font-size: 16px;
   letter-spacing: 0;
+  margin-bottom: 24px;
+}
+
+[data-contact-text-1]{
+  margin-bottom: 14px;
 }
 
 .contact_text {
@@ -163,6 +171,7 @@
   margin-bottom: -5px;
 }
 
+
 .spoiler_item.footer-spoiler_item.active svg{
   transform: rotate(180deg);
 }
@@ -176,6 +185,19 @@
   align-items: center;
   gap: 6px;
   transition: .3s;
+}
+
+.footer-spoiler_arrow.rotate{
+  transform: rotate(180deg);
+  transition: .3s;
+}
+
+.footer-spoiler_arrow{
+  transition: .3s;
+}
+
+.footer-spoiler_head.spoiler_head svg{
+  margin-top: 2px;
 }
 
 .footer-spoiler_title_mobile{
@@ -200,7 +222,7 @@
 }
 
 .footer-spoiler_body_content{
-  padding: 10px 0 0;
+  padding: 2px 0 0;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -245,7 +267,7 @@
 
 .footer_footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 50px;
   align-items: center;
   position: relative;
@@ -258,7 +280,7 @@
 }
 
 .footer_footer .footer_text {
-  width: 49%;
+  width: 41%;
 }
 
 .footer_text a {
@@ -297,6 +319,10 @@ br.br-mobile {
 .spoiler {
   display: flex;
   flex-direction: column;
+}
+
+.contact_item .spoiler{
+  margin-bottom: 22px;
 }
 
 .spoiler_item {

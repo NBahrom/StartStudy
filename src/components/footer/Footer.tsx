@@ -8,7 +8,10 @@ import FooterBottom from "./FooterBottom";
 import FooterForm from "./FooterForm";
 import SocialIcons from "./SocialIcons";
 
+import maps from "../../data/maps.json"
+
 export default function Footer() {
+
   return (
     <footer className="footer">
         <div className="container-wide">
@@ -30,11 +33,10 @@ export default function Footer() {
                     <div className="section-col footer-right">
 
                         <div className="contact_wrapper">
-
-                            <ContactBlock title="Офис в Чехии" text="Freyova 82/27, 190 00, Praha 9-Vysočany, Czechia" tel="(+420) 725-073-055" />
-
-                            <ContactBlock title="Офис в Узбекистане" text="Узбекистан, г. Ташкент 3-я ул. Навнихол, 7" tel="(+998) 95 145-55-53" />
-                        </div>
+                            {maps.map((location) => (
+                                <ContactBlock key={location.id} title={location.title} text={location.textLocation} maps={location.maps} tel={location.telNumber} />
+                            ))}
+                         </div>
 
                         <div className="social_wrapper_scroll">
                             <SocialIcons />

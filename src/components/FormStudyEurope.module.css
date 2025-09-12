@@ -82,9 +82,9 @@
 }
 
 .main-form_button{
-  background-color: #CCF43B;
-  color: var(--dark);
-  padding: 20px 36px;
+  background-color: #CCF43B !important;
+  color: var(--dark) !important;
+  padding: 20px 36px !important;
 }
 
 .main-form_success{

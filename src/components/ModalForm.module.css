@@ -1,0 +1,252 @@
+.modal, .modal_form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #232323B2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    display: flex;
+}
+
+.modal.active, .modal_form.active{
+    display: flex;
+}
+
+.modal .container, .modal_form .container{
+    height: 100%;
+    display: flex;
+    width: 100%;
+}
+
+.modal_inner, .modal_form_inner{
+    position: relative;
+    overflow: visible;
+}
+
+
+.reviews_modal_close, .modal_form_close{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0px 0px 40px -12px #00000070;
+
+}
+ .reviews_modal_close, .modal_form_close{
+    display: flex;
+}
+
+
+.modal_form_inner{
+    margin: auto;
+    max-width: 582px;
+    width: 100%;
+    height: 727px;
+    background-color: #fff;
+    text-align: center;
+    padding: 80px 55px;
+}
+
+.modal_form_title{
+  letter-spacing: 0 !important;
+  margin-bottom: 20px;
+}
+
+.modal_form_text{
+  margin: 0 auto;
+  font-size: 16px !important;
+}
+
+
+.main-form {
+  width: 100%;
+  margin: 40px auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.main-form_field {
+  padding: 22px 30px;
+  margin-bottom: 10px;
+  color: var(--dark);
+  font-size: 16px;
+  background-color: #F5F5F5;
+  width: 100%;
+}
+
+.main-form_field::placeholder {
+  color: var(--dark-40);
+}
+
+.main-form_input {
+  border-radius: 0;
+}
+
+.main-form_textarea {
+  width: 100%;
+  resize: none;
+  height: 160px;
+  border-radius: 0;
+  padding-top: 30px;
+}
+
+.main-form_footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+  align-items: center;
+}
+
+.main-form_policy {
+  margin-right: 20px;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+.main-form_policy a {
+  text-decoration: underline;
+}
+
+.main-form_policy a:hover {
+  text-decoration: none;
+}
+
+.main-form_button {
+  background-color: #CCF43B !important;
+  color: var(--dark) !important;
+  padding: 20px 36px !important;
+  width: 230px;
+}
+
+.main-form_success {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  flex-direction: column;
+  text-align: center;
+  gap: 25px;
+}
+
+.main-form_success.hidden {
+  display: none;
+}
+
+
+@media(max-width: 992px){
+    .main-form {
+        max-width: initial;
+    }
+
+    .main-form_footer {
+        flex-direction: column-reverse;
+    }
+
+    .main-form_policy {
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        margin-right: 0;
+    }
+
+    .main-form_policy br {
+        display: none;
+    }
+
+    .main-form_button {
+        width: 100%;
+        display: flex;
+    }
+
+}
+
+@media(max-width: 767px){
+     .modal_form{
+    overflow-y: scroll;
+  }
+
+  .modal_form_inner{
+    height: 712px;
+    padding: 50px 30px;
+    width: calc(100% - 70px);
+    margin: 43px auto 100px;
+  }
+
+  .modal_form_title{
+    text-align: center !important;
+    font-size: 29px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .modal_form_text{
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  .modal_form_text br{
+    display: none;
+  }
+
+  .main-form{
+    margin: 23px auto 0;
+  }
+
+  .main-form_textarea{
+    height: 150px;
+  }
+
+  .main-form_policy {
+    font-size: 12px;
+  }
+
+   .main-form_input {
+    width: 100%;
+  }
+
+  .main-form_footer {
+    flex-direction: column-reverse;
+  }
+
+  
+  .button-wrapper {
+    width: 100%;
+  }
+
+  .main-form_button {
+    width: 100%;
+  }
+
+  .main-form_policy {
+    text-align: left;
+    max-width: 290px;
+    margin-right: auto;
+  }
+
+  .main-form_policy br {
+    display: none;
+  }
+}

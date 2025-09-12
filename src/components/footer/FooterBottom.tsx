@@ -1,7 +1,9 @@
 export default function FooterBottom() {
+    const year = new Date().getFullYear();
+
     return(
         <div className="footer_footer">
-            <div className="footer_text">2019—<span className="year"></span>, <br/> BAKTRIA s.r.o. ID: 28227638. <br/>
+            <div className="footer_text">2019—<span className="year">{year}</span>, <br/> BAKTRIA s.r.o. ID: 28227638. <br/>
                 <span data-contact-copyright="">Все права защищены.</span></div>
             <div className="footer_text"><a target="_blank" href="https://startstudy.cz/privacy-policy.pdf"
                     data-contact-policy="">Политика обработки персональных данных</a></div>

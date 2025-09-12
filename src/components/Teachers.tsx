@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import Video from "./UI/Video";
 
 import { Swiper as SwiperType } from "swiper";
@@ -28,9 +28,10 @@ export default function Teachers() {
             {/* Left slider */}
             <div className={`section-col ${styles.section7ColLeft}`}>
               <Swiper
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
                 speed={400}
                 loop={true}
+                autoplay={{ delay: 2500, disableOnInteraction: false }}
                 slidesPerView={1}
                 pagination={{
                   clickable: true,

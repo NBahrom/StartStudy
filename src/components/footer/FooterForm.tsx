@@ -1,9 +1,37 @@
+import { useState } from "react";
+
 export default function FooterForm() {  
+    const [submitted, setSubmitted] = useState(false);
+    const [shake, setShake] = useState(false);
+
+    function validateEmail(email: string) {
+        // Simple email regex
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function handleSubmit(event: React.FormEvent) {
+        event.preventDefault();
+        const form = event.target as HTMLFormElement;
+        const formData = new FormData(form);
+        const email = formData.get("email") as string;
+
+        if (!validateEmail(email)) {
+            setShake(true);
+            setTimeout(() => setShake(false), 500); // Remove shake after animation
+            return;
+        }
+
+        setSubmitted(true);
+    }
+
     return (
         <>
             <h5 data-footer-title="" className="footer_title">Подписаться на новости</h5>
             
-            <form className="subscribe-form" id="form_subscribe">
+            <form 
+                onSubmit={handleSubmit}
+                className={`subscribe-form ${shake ? " form-error" : ""}`}
+                id="form_subscribe">
                 <input data-footer-mail="" className="subscribe-form_input" placeholder="Электронная почта"
                     type="text" name="email" />
 
@@ -16,7 +44,7 @@ export default function FooterForm() {
                 </button>
 
 
-                <div data-success-block="" className="subscribe-form_success hidden">
+                <div data-success-block="" className={`subscribe-form_success ${submitted ? " " : "hidden"}`}>
                     <svg width="20" height="15" viewBox="0 0 20 15" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -31,7 +59,7 @@ export default function FooterForm() {
             </form>
 
             <div className="subscribe-form_policy section-text-2">
-                <span data-footer-policy-1="">Нажимая кнопку Отправить, вы соглашаетесь <br/> с </span>
+                <span data-footer-policy-1="">Нажимая кнопку , вы соглашаетесь <br/> с </span>
                 <a data-footer-policy-2="" target="_blank"
                     href="https://startstudy.cz/privacy-policy.pdf">Политикой в отношении обработки <br/>
                     персональных данных</a>

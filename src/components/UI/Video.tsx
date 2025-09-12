@@ -46,7 +46,7 @@ export default function Video({
           role="button"
         >
           <img className={styles.videoPoster} src={imageSrc} alt="poster" />
-          <svg xmlns="http://www.w3.org/2000/svg" width="66" height="67" fill="none">
+          <svg className="playIcon" xmlns="http://www.w3.org/2000/svg" width="66" height="67" fill="none">
             <rect width="66" height="66" y=".96" fill="#fff" rx="33" />
             <path
               fill="#2F3846"

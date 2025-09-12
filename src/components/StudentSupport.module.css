@@ -1,5 +1,5 @@
 .section-3 {
-  padding: 140px 0 105px;
+  padding: 90px 0 60px;
 }
 
 /* we target the .section-3_col element (nth-child rules remain) */
@@ -38,7 +38,7 @@
 }
 
 /* make Spoiler plus/lines global too */
-:global(.spoiler_plus) {
+.section-3_spoiler :global(.spoiler_plus) {
   width: 58px;
   height: 58px;
   min-width: 58px;
@@ -50,12 +50,12 @@
   margin-top: 0;
 }
 
-:global(.spoiler_plus_line) {
+.section-3_spoiler :global(.spoiler_plus_line) {
   width: 13px;
 }
 
 /* pseudo element on global class */
-:global(.spoiler_plus)::after {
+.section-3_spoiler :global(.spoiler_plus)::after {
   height: 13px;
 }
 
@@ -78,17 +78,17 @@
     margin-bottom: 140px;
   }
 
-  :global(.spoiler_item) {
+  .section-3_spoiler :global(.spoiler_item) {
     padding: 29px 0;
   }
 }
 
 @media (max-width: 767px) {
-  :global(.spoiler_text) {
+  .section-3_spoiler :global(.spoiler_text) {
     padding: 20px 0px 0 30px;
   }
 
-  :global(.spoiler_head) {
+  .section-3_spoiler :global(.spoiler_head) {
     font-size: 20px;
     line-height: 1.2;
     padding-left: 16px;

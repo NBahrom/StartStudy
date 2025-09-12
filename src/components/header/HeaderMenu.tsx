@@ -17,7 +17,7 @@ export default function HeaderMenu({className}: {className?: string}) {
                     <a href="#" className="header-menu_item_link">Проживание</a>
                 </li>
                 <li className="header-menu_item">
-                    <a href="#" className="header-menu_item_link">Обратная связь</a>
+                    <a href="#" className="header-menu_item_link">Партнерам</a>
                 </li>
             </ul>
         </nav>

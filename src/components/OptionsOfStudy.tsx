@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 import SectionImage from "../images/section-2-img.jpg";
 import styles from "./OptionsOfStudy.module.css";
@@ -25,13 +25,17 @@ export default function OptionsOfStudy() {
 
                         <div className={`section-col ${styles.section2ColRight}`}>
                             <Swiper
-                                modules={[Pagination]}
+                                modules={[Pagination, Autoplay]}
                                 pagination={{
                                     el: `.${styles.section2SliderPagination}`,
                                     clickable: true,
                                 }}
                                 spaceBetween={20}
                                 slidesPerView={1}
+                                autoplay={{
+                                    delay: 2500, 
+                                    disableOnInteraction: false,
+                                }}
                                 className={styles.section2Slider}
                             >
                                 <SwiperSlide className={styles.section2Slide}>

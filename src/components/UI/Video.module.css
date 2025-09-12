@@ -21,8 +21,14 @@
   /* transition: opacity 0.3s ease; */
 }
 
+.video-mask:hover svg {
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
 .video-mask svg {
   z-index: 3;
+  transition: all 0.3s ease;
 }
 
 .video-wrapper video,

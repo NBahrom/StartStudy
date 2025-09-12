@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import { Swiper as SwiperType } from "swiper";
 
 import reviews from "../data/reviews.json";
 
 import styles from './ReviewsCzech.module.css'
+import AnimatedProgressCircle from "./UI/AnimatedProgressCircle";
 
 export default function ReviewsCzech() {
     const czechReviews = reviews.filter((review) => review.type === "czech");
     const [activeReview, setActiveReview] = useState(czechReviews[0]);
+
+    const swiperRef = useRef<SwiperType | null>(null);
+    const autoplayDelay = 2500;
 
     return (
         <section className={styles.section}>
@@ -19,10 +23,14 @@ export default function ReviewsCzech() {
                 <div className={styles.reviewsBlock}>
                     <div className={styles.reviewsText}>
                          <Swiper
-                            modules={[Navigation, Pagination]}
+                            modules={[Navigation, Pagination, Autoplay]}
                             navigation={{
                                 nextEl: `.czech_review_slider_nav_next  `,
                                 prevEl: `.czech_review_slider_nav_prev`,
+                            }}
+                            autoplay={{
+                                delay: autoplayDelay,
+                                disableOnInteraction: false,
                             }}
                             pagination={{
                                 el: `.czech_review_pagination`,
@@ -36,6 +44,7 @@ export default function ReviewsCzech() {
                                 setActiveReview(czechReviews[realIndex]);
                             }}
                             onInit={(swiper: SwiperType) => {
+                                swiperRef.current = swiper;
                                 setActiveReview(czechReviews[swiper.realIndex]);
                             }}
                             className={styles.slider}
@@ -66,6 +75,9 @@ export default function ReviewsCzech() {
                             </div>
 
                             <div className={`czech_review_slider_nav_next ${styles.next}`}>
+
+                                <AnimatedProgressCircle autoplayDelay={autoplayDelay} swiperRef={swiperRef} />
+                                
                                 <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" fill="none">
                                     <path
                                         stroke="#02191D"

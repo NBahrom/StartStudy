@@ -1,0 +1,40 @@
+[
+    {
+        "id":"1",
+        "location": "czech",
+        "title": "Офис в Чехии",
+        "textLocation": "Freyova 82/27, 190 00, Praha 9-Vysočany, Czechia",
+        "telNumber": "(+420) 725-073-055",
+        "maps": [
+            {
+                "name": "Google карты",
+                "link": "#"
+            },
+            {
+                "name": "Яндекс карты",
+                "link": "#"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "location": "uzb",
+        "title": "Офис в Узбекистане",
+        "textLocation": "Узбекистан, г. Ташкент 3-я ул. Навнихол, 7",
+        "telNumber": "(+998) 95 145-55-53",
+        "maps": [
+            {
+                "name": "Google карты",
+                "link": "#"
+            },
+            {
+                "name": "Яндекс карты",
+                "link": "#"
+            },
+            {
+                "name": "2GIS",
+                "link": "#"
+            }
+        ]
+    }
+]

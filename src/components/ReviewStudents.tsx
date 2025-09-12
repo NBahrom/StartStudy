@@ -2,7 +2,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
+
 import reviews from "../data/reviews.json";
+import type { Swiper as SwiperType } from "swiper";
 
 import styles from "./ReviewStudents.module.css";
 import VideoReview from "./UI/VideoReview";
@@ -40,7 +42,8 @@ export default function ReviewStudents() {
                 pagination={{
                   el: `.testimonals-student-slider-pagination`,
                   clickable: true,
-                }}
+                }} 
+                onInit={(swiper: SwiperType) => swiper.slideTo(4, 0)}
                 speed={400}
                 slidesPerView={3}
                 spaceBetween={20}
@@ -61,7 +64,7 @@ export default function ReviewStudents() {
                         1024: 
                             { 
                             slidesPerView: 3,
-                            slidesPerGroup: 3,
+                            slidesPerGroup: 3
                         } 
                     }
                 }
@@ -84,7 +87,7 @@ export default function ReviewStudents() {
                 
             </Swiper>
 
-            <div className={`testimonals-student-slider-pagination ${styles.pagination}`}></div>
+            <div className={`slider_pagination testimonals-student-slider-pagination ${styles.pagination}`}></div>
 
             
         </div>

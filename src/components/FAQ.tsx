@@ -1,6 +1,7 @@
 import { useState } from "react";
 import faqData from "../data/faq.json";
 import Spoiler from "./UI/Spoiler";
+import { useMediaScreen } from "../util/useMediaScreen";
 
 import styles from "./FAQ.module.css";
 
@@ -8,13 +9,18 @@ export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
+  const {isDesktop} = useMediaScreen();
+  if (isDesktop && activeIndex === null && faqData.length > 0) {
+    setActiveIndex(0); // Open the first spoiler by default on desktop
+  }
+  
   const visibleFaqs = showAll ? faqData : faqData.slice(0, 5);
 
   return (
     <section className={styles.section10}>
       <div className="container-wide">
         <div className={styles.section10Inner}>
-          <h2 data-section7-title="" className={styles.section10Title}>
+          <h2 data-section7-title="" className={`section-title ${styles.section10Title}`}>
             Часто задаваемые вопросы
           </h2>
 

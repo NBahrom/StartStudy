@@ -75,6 +75,22 @@
   cursor: pointer;
   border-bottom: 4px solid transparent;
   transition: .3s;
+  position: relative;
+}
+
+.hero_tab::before{
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0%;
+  width: 0%;
+  height: 4px;
+  background-color: #CCF43B;
+  transition: .3s;
+}
+
+.hero_tab:hover::before{
+  width: 100%;
 }
 
 .hero_tab.active {

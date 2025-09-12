@@ -1,0 +1,8 @@
+.progressRing{
+  position: absolute;
+  right: -13px;
+  bottom: -12px;
+  width:93px;
+  height: 90px;
+  transform: rotate(272deg);
+}

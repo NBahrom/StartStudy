@@ -3,7 +3,7 @@
   width: calc(100% - 120px);
   margin: 0 auto;
   max-width: 1320px;
-  padding: 140px 0;
+  padding: 90px 0;
   text-align: center;
 }
 
@@ -63,6 +63,7 @@
   right: 60px;
   bottom: 60px;
   left: initial;
+  z-index: 2;
   justify-content: flex-end;
 }
 

@@ -32,7 +32,7 @@
 
 /* Local section styles (kept hyphen names as you provided) */
 .section-6 {
-  padding: 140px 0 0;
+  padding: 90px 0 0;
   overflow: hidden;
 }
 
@@ -91,7 +91,7 @@
 
 /* target global section-row inside local .section-6 */
 .section-6 :global(.section-row) {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .section-6_item {

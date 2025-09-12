@@ -1,5 +1,5 @@
-import { createBrowserRouter, RouterProvider , Outlet} from 'react-router-dom';
-// import { createHashRouter, RouterProvider, Outlet } from 'react-router-dom';
+// import { createBrowserRouter, RouterProvider , Outlet} from 'react-router-dom';
+import { createHashRouter, RouterProvider, Outlet } from 'react-router-dom';
 
 import HomePage from './pages/Home';
 import LanguageCoursesPage from './pages/LanguageCourses';
@@ -17,7 +17,7 @@ function Layout() {
   );
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <Layout />,   
     children: [

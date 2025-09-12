@@ -7,10 +7,12 @@ import Logo from "./Logo";
 import HeaderMenu from "./HeaderMenu";
 import DropDown from "./DropDown";
 import BurgerMenu from "./BurgerMenu";
+import ModalForm from "../ModalForm";
 
 export default function Header() {
 
     const [isSticky, setIsSticky] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const topRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
@@ -58,9 +60,12 @@ export default function Header() {
                     <HeaderMenu />
 
 
-                    <a data-open-modal-form className="header_btn">
+                    <a onClick={() => setIsModalOpen(true)} className="header_btn">
                         Оставить заявку
                     </a>
+
+                    {isModalOpen && <ModalForm onClose={() => setIsModalOpen(false)}  />}
+
 
                 </div>
             </div>

@@ -64,7 +64,7 @@ export default function Universities() {
             centeredSlides={true}
             navigation={{ nextEl: ".home-next", prevEl: ".home-prev" }}
             breakpoints={{
-              0: { slidesPerView: 1.18, slidesOffsetBefore: 25, spaceBetween: 0 },
+              0: { slidesPerView: 1.18, slidesOffsetBefore: 25 },
               768: { slidesPerView: 1.18 },
             }}
           >

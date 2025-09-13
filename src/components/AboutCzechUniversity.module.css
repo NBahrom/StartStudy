@@ -84,10 +84,6 @@
   .slider-1_item:first-child{
     margin-left: initial;
   }
-
-  .slider-1_wrapper{
-    gap: 0;
-  }
 }
 
 @media(max-width: 767px){

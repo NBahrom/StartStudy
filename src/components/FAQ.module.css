@@ -50,6 +50,7 @@
   width: fit-content;
   height: initial;
   letter-spacing: 0;
+  text-align: center;
 }
 
 .section10Spoiler :global(.spoiler_item:last-child) {

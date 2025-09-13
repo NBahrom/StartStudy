@@ -148,6 +148,10 @@
     flex-direction: column-reverse;
   }
 
+  .main-form_footer :global(.button-wrapper){
+    width: 100%;
+  }
+
   .section-8 .button-wrapper{
     width: 100%;
   }

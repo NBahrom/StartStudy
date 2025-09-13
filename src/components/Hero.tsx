@@ -23,7 +23,7 @@ export default function Banner() {
               data-hero-title=""
             >
               Курс чешского языка
-              <br />университета <br />
+              <br /> университета <br />
               Естесственных наук <br />в Праге
             </h1>
 

@@ -98,7 +98,7 @@
     padding: 45px 0 110px;
   }
 
-  .section-9_reviews{
+  .section-9_reviews:global(.section-row){
     flex-direction: column-reverse;
     padding: 0;
   }

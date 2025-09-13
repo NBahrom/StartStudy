@@ -140,6 +140,7 @@ max-height: 355px;
   .features_item{
     position: initial;
     flex-direction: column;
+    min-height: 640px;
   }
 
   .features_img_wrapper {

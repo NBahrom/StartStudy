@@ -26,7 +26,7 @@ export default function StudentSupport() {
             </div>
 
             <div className={`section-col ${styles.section3Col}`}>
-              <div className={`section-text-1 ${styles.section3ColText1}`}>
+              <div className={`section-text-1 ${styles.section3Text1}`}>
                 Эти услуги включают в себя: консультации по визам, консультации по
                 культурной адаптации, рекомендации по планированию учебы/карьеры,
                 помощь с жильем и помощь в выборе университета.

@@ -123,4 +123,15 @@
   .section-4_title br {
     display: none;
   }
+
+  .section4Pagination{
+    position: absolute;
+    bottom: -35px !important;
+  }
+
+  .section4Slider:global(.swiper){
+    margin-right: 35px;
+    margin-left: 35px;
+    overflow: hidden;
+  }
 }

@@ -50,79 +50,47 @@ export default function CourseSteps() {
                             modules={[Autoplay, Pagination]}
                             speed={400}
                             slidesPerView={1}
-                            spaceBetween={0}
+                            spaceBetween={10}
                             autoplay={{ delay: 4000 }}
-                            loop={true}
                             pagination={{
                             clickable: true,
                             el: `.${styles.slider3Pagination}`, // link to module CSS class
                             }}
                             className={styles.slider3}
                         >
-                            <SwiperSlide className={styles.slider3Item}>
-                                <div className={styles.featuresItem}>
-                                    <div className={styles.featuresImgWrapper}>
-                                    <img
-                                        src="images/section-3-img-1.webp"
-                                        className={styles.featuresImg}
-                                        alt=""
-                                    />
+                            {data.map((item, index) => (
+                                <SwiperSlide className={styles.slider3Item}>
+                                    <div className={styles.featuresItem}>
+                                        <div className={styles.featuresImgWrapper}>
+                                        <img
+                                            src={item.image}
+                                            className={styles.featuresImg}
+                                            alt=""
+                                        />
+                                        </div>
+                                        <div className={styles.featuresContent}>
+                                        <div
+                                            data-features-number-1=""
+                                            className={styles.featuresNumber}
+                                        >
+                                            {index + 1}
+                                        </div>
+                                        <div
+                                            data-features-title-1=""
+                                            className={styles.featuresTitle}
+                                        >
+                                            {item.title}
+                                        </div>
+                                        <div
+                                            data-features-text-1=""
+                                            className={`${styles.featuresText} section-text-2`}
+                                        >
+                                            {item.text}
+                                        </div>
+                                        </div>
                                     </div>
-                                    <div className={styles.featuresContent}>
-                                    <div
-                                        data-features-number-1=""
-                                        className={styles.featuresNumber}
-                                    >
-                                        1
-                                    </div>
-                                    <div
-                                        data-features-title-1=""
-                                        className={styles.featuresTitle}
-                                    >
-                                        Виза и переезд
-                                    </div>
-                                    <div
-                                        data-features-text-1=""
-                                        className={`${styles.featuresText} section-text-2`}
-                                    >
-                                        Подбираем подходящие варианты размещения для каждого!
-                                        Включая места, где живут только наши студенты
-                                    </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide className={styles.slider3Item}>
-                                <div className={styles.featuresItem}>
-                                    <div className={styles.featuresImgWrapper}>
-                                    <img
-                                        src="images/section-3-img-1.webp"
-                                        className={styles.featuresImg}
-                                        alt=""
-                                    />
-                                    </div>
-                                    <div className={styles.featuresContent}>
-                                    <div
-                                        data-features-number-2=""
-                                        className={styles.featuresNumber}
-                                    >
-                                        2
-                                    </div>
-                                    <div
-                                        data-features-title-2=""
-                                        className={styles.featuresTitle}
-                                    >
-                                        Образование
-                                    </div>
-                                    <div
-                                        data-features-text-2=""
-                                        className={`${styles.featuresText} section-text-2`}
-                                    >
-                                        Помогаем выбрать оптимальный учебный путь и университет
-                                    </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
+                                </SwiperSlide>
+                            ))}
                         </Swiper>  
                     )}
 

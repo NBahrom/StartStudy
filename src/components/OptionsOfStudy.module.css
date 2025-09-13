@@ -108,10 +108,13 @@
 
   .section-2_title {
     margin-bottom: 22px;
+    margin-left: 0;
+    line-height: 1.2 !important;
   }
 
   .section-2_text-1{
     margin-bottom: 40px;
+    margin-left: 0;
   }
 
   .section-2_slide_title{
@@ -123,22 +126,15 @@
     max-width: initial;
   }
 
-  .section-2_btn.btn {
+  .section-2_btn:global(.btn){
     width: 100%;
     position: initial;
     margin-top: 35px;
   }
 
-  .section-2_slider{
-
-  }
-
-  .section-2_slider_wrapper{
-
-  }
 
 
- .section-2  .section-2_slider_pagination.slider_pagination {
+ .section-2  .section-2_slider_pagination:global(.slider_pagination) {
     right: initial;
     bottom: initial;
     width: fit-content;

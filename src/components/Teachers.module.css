@@ -69,7 +69,11 @@
   font-weight: 600;
   line-height: 1.14;
   max-width: 323px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+}
+
+.section7Slide{
+  background-color: var(--color-1);
 }
 
 .section-7_slide_text {
@@ -200,22 +204,22 @@
   }
 
   .section-7_col-left {
-    padding: 40px 35px 66px;
+    padding: 40px 35px 66px !important;
   }
 
   .section-7_slide_title {
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
   }
 
   .section-7_experience_title {
-    font-size: 35px;
+    font-size: 35px !important;
   }
 
   .section-7_experience_wrapper {
-    font-size: 20px;
+    font-size: 20px !important;
   }
 
   .section-7_experience_text {
-    font-size: 12px;
+    font-size: 12px !important;
   }
 }

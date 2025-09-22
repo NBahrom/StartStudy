@@ -105,6 +105,7 @@
   display: flex;
   justify-content: center;
   z-index: 2;
+  align-items: flex-end;
 }
 
  .slider_pagination.swiper-pagination-bullets .swiper-pagination-bullet,
@@ -119,8 +120,7 @@
 }
 
  .slider_pagination.swiper-pagination-bullets .swiper-pagination-bullet:hover{
-    width: 36px;
-    background-color: #CCF43B;
+    height: 4px;
  }
 
   .slider_pagination.swiper-pagination-bullets .swiper-pagination-bullet::after{

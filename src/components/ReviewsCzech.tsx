@@ -1,20 +1,23 @@
 import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { useSwiperPauseOnHover } from "../util/useSwiperPauseOnHover ";
 
 import { Swiper as SwiperType } from "swiper";
 
 import reviews from "../data/reviews.json";
 
 import styles from './ReviewsCzech.module.css'
-import AnimatedProgressCircle from "./UI/AnimatedProgressCircle";
+
 
 export default function ReviewsCzech() {
     const czechReviews = reviews.filter((review) => review.type === "czech");
     const [activeReview, setActiveReview] = useState(czechReviews[0]);
 
     const swiperRef = useRef<SwiperType | null>(null);
-    const autoplayDelay = 2500;
+    const autoplayDelay = 4000;
+
+   useSwiperPauseOnHover(swiperRef, `.${styles.pagination}`);
 
     return (
         <section className={styles.section}>
@@ -23,7 +26,8 @@ export default function ReviewsCzech() {
                 <div className={styles.reviewsBlock}>
                     <div className={styles.reviewsText}>
                          <Swiper
-                            modules={[Navigation, Pagination, Autoplay]}
+                            modules={[Navigation, Pagination, Autoplay, EffectFade]}
+                            effect="fade"
                             navigation={{
                                 nextEl: `.czech_review_slider_nav_next  `,
                                 prevEl: `.czech_review_slider_nav_prev`,
@@ -75,8 +79,6 @@ export default function ReviewsCzech() {
                             </div>
 
                             <div className={`czech_review_slider_nav_next ${styles.next}`}>
-
-                                <AnimatedProgressCircle autoplayDelay={autoplayDelay} swiperRef={swiperRef} />
                                 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" fill="none">
                                     <path
@@ -94,7 +96,7 @@ export default function ReviewsCzech() {
                     </div>
                     <div className={styles.reviewImage}>
                         <img src={activeReview.poster} alt={activeReview.name} />
-                        <div className={`czech_review_pagination ${styles.pagination}`}></div>
+                        <div style={{ "--pagination-transition": `${autoplayDelay / 1000}s` } as React.CSSProperties} className={`czech_review_pagination ${styles.pagination}`}></div>
                     </div>
                 </div>
             </div>

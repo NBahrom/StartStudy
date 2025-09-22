@@ -1,0 +1,18 @@
+.tagsBlock{
+    display: flex ;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.tagsBlock span{
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+    color: var(--dark-50);
+}

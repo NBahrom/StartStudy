@@ -1,14 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Video.module.css";
+import { Swiper as SwiperType } from "swiper";
 
 export default function Video({
   imageSrc,
   videoSrc,
   className,
+  swiperRef,
 }: {
   imageSrc: string;
   videoSrc: string;
   className?: string;
+  swiperRef?: React.RefObject<SwiperType | null>;
 }) {
   const [play, setPlay] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -18,6 +21,7 @@ export default function Video({
     setPlay(false);
     if (videoRef.current) {
       videoRef.current.pause();
+      swiperRef?.current?.autoplay?.start()
       videoRef.current.currentTime = 0;
     }
   }, [imageSrc, videoSrc]);
@@ -25,6 +29,7 @@ export default function Video({
   // Auto play when play is set to true
   useEffect(() => {
     if (play && videoRef.current) {
+      swiperRef?.current?.autoplay?.stop()
       videoRef.current
         .play()
         .catch((err) => {

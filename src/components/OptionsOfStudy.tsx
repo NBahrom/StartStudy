@@ -1,10 +1,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { useRef } from "react";
+import type { Swiper as SwiperType } from "swiper";
+import { useSwiperPauseOnHover } from "../util/useSwiperPauseOnHover ";
 
 import SectionImage from "../images/section-2-img.jpg";
 import styles from "./OptionsOfStudy.module.css";
+import 'swiper/css/effect-fade';
 
 export default function OptionsOfStudy() {
+    const swiperRef = useRef<SwiperType | null>(null);
+
+    useSwiperPauseOnHover(swiperRef, `.${styles.section2SliderPagination}`);
+
+
     return (
         <section className={styles.section2}>
             <div className="container-wide">
@@ -25,22 +34,35 @@ export default function OptionsOfStudy() {
 
                         <div className={`section-col ${styles.section2ColRight}`}>
                             <Swiper
-                                modules={[Pagination, Autoplay]}
+                                modules={[Pagination, Autoplay, EffectFade]}
+                                effect="fade"
                                 pagination={{
                                     el: `.${styles.section2SliderPagination}`,
                                     clickable: true,
                                 }}
-                                spaceBetween={20}
+                                spaceBetween={0}
                                 slidesPerView={1}
                                 autoplay={{
-                                    delay: 2500, 
+                                    delay: 4000, 
                                     disableOnInteraction: false,
+                                    pauseOnMouseEnter: true,
                                 }}
                                 className={styles.section2Slider}
+                                onSwiper={(swiper: SwiperType)  => (swiperRef.current = swiper)}
                             >
                                 <SwiperSlide className={styles.section2Slide}>
                                     <div className={styles.section2SlideTitle}>
-                                        Доступные университетские программы на английском языке
+                                        Доступные универсиasdasdтетские программы на английском языке
+                                    </div>
+                                    <div className={`section-text-2 ${styles.section2SlideText}`}>
+                                        Обучиться на английском языке и получить степень бакалавра
+                                        или магистра можно в Чехии.
+                                    </div>
+                                </SwiperSlide>
+
+                                <SwiperSlide className={styles.section2Slide}>
+                                    <div className={styles.section2SlideTitle}>
+                                        Доступные университетские программы asdasdна английском языке
                                     </div>
                                     <div className={`section-text-2 ${styles.section2SlideText}`}>
                                         Обучиться на английском языке и получить степень бакалавра
@@ -54,7 +76,7 @@ export default function OptionsOfStudy() {
                                     </div>
                                     <div className={`section-text-2 ${styles.section2SlideText}`}>
                                         Обучиться на английском языке и получить степень бакалавра
-                                        или магистра можно в Чехии.
+                                        или мasdasdагистра можно в Чехии.
                                     </div>
                                 </SwiperSlide>
 
@@ -63,17 +85,7 @@ export default function OptionsOfStudy() {
                                         Доступные университетские программы на английском языке
                                     </div>
                                     <div className={`section-text-2 ${styles.section2SlideText}`}>
-                                        Обучиться на английском языке и получить степень бакалавра
-                                        или магистра можно в Чехии.
-                                    </div>
-                                </SwiperSlide>
-
-                                <SwiperSlide className={styles.section2Slide}>
-                                    <div className={styles.section2SlideTitle}>
-                                        Доступные университетские программы на английском языке
-                                    </div>
-                                    <div className={`section-text-2 ${styles.section2SlideText}`}>
-                                        Обучиться на английском языке и получить степень бакалавра
+                                        Обуasdasdчиться на английском языке и получить степень бакалавра
                                         или магистра можно в Чехии.
                                     </div>
                                 </SwiperSlide>

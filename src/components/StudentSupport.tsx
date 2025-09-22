@@ -1,17 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import supportFAQ from "../data/supportFAQ.json";
 import Spoiler from "./UI/Spoiler";
-import { useMediaScreen } from "../util/useMediaScreen";
 
 import styles from "./StudentSupport.module.css";
 
 export default function StudentSupport() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
-  const {isDesktop} = useMediaScreen();
-  if (isDesktop && activeIndex === null ) {
-    setActiveIndex(0); 
-  }
 
   return (
     <section className={styles.section3}>

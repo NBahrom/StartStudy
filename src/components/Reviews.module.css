@@ -43,6 +43,10 @@
   opacity: 0.5;
 }
 
+.section-9_slide{
+  background-color: #F5F5F5;
+}
+
 .section-9_col-left{
   width: 47%;
   height: 470px;
@@ -56,6 +60,7 @@
 .section-9_slider{
   height: 100%;
 }
+
 
 .section-9_slider_pagination:global(.slider_pagination):global(.swiper-pagination-bullets) {
   position: absolute;

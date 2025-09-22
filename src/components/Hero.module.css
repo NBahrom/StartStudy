@@ -83,14 +83,17 @@
   position: absolute;
   bottom: -4px;
   left: 0%;
-  width: 0%;
+  width: 100%;
   height: 4px;
   background-color: #CCF43B;
   transition: .3s;
+  opacity: 0;
 }
 
 .hero_tab:hover::before{
-  width: 100%;
+  opacity: 1;
+  transition: .3s;
+
 }
 
 .hero_tab.active {

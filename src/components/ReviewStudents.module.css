@@ -60,6 +60,18 @@
     cursor: default;
 }
 
+.navNext:hover,
+.navPrev:hover{
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+.navNext,
+.navPrev{
+    transition: all 0.3s ease;
+}
+
+
 .slider{
     overflow: unset;
 }
@@ -72,6 +84,7 @@
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    height: 5px;
 }
 
 @media (max-width: 992px) {

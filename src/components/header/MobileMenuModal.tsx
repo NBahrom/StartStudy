@@ -6,9 +6,13 @@ import { createPortal } from 'react-dom';
 import maps from "../../data/maps.json"
 import FooterBottom from "../footer/FooterBottom";
 import ModalForm from "../ModalForm";
-
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../store/store";
+import { setLanguage } from "../../store/languageSlice";
 
 export default function MobileMenuModal() {
+    const dispatch = useDispatch();
+    const { current, languages } = useSelector((state: RootState) => state.language);
     const [isModalOpen, setIsModalOpen] = useState<boolean>()
 
     return createPortal(
@@ -18,10 +22,9 @@ export default function MobileMenuModal() {
                        
 
                         <ul className="mobile-menu_item_wrapper">
-                            <li className="mobile-menu_item isActiveLangBtn" data-value="ru">ru</li>
-                            <li className="mobile-menu_item" data-value="en">en</li>
-                            <li className="mobile-menu_item" data-value="uz">uz</li>
-                            <li className="mobile-menu_item" data-value="cz">cz</li>
+                            {languages.map(lang => (
+                                <li onClick={() => dispatch(setLanguage(lang))} className={`mobile-menu_item ${lang == current ? "isActiveLangBtn" : ' '}`}>{lang}</li>
+                            ))}
                         </ul>
 
                         <a onClick={() => setIsModalOpen(true)} className="header_btn">

@@ -1,17 +1,14 @@
 import { useState } from "react"
 import Spoiler from "./UI/Spoiler"
 import SectionImg from "../images/section-2-img.webp"
-import { useMediaScreen } from "../util/useMediaScreen"
+
 
 import styles from "./CourseFor.module.css"
 
 export default function CourseFor() {
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [activeIndex, setActiveIndex] = useState<number | null>(0);
     
-      const {isDesktop} = useMediaScreen();
-    if (isDesktop && activeIndex === null) {
-        setActiveIndex(0); // Open the first spoiler by default on desktop
-    }
+
     return (
         <section className={styles.section2}>
             <div className="container-wide">

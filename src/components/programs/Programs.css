@@ -179,11 +179,16 @@
   height: 16px;
   width: 16px;
   /* margin-left: auto; */
-  margin-left: 7px;
+  margin-left: 0px;
   position: relative;
   cursor: pointer;
+  left: -7px;
   z-index: 1;
   margin-top: 3px;
+}
+
+.tarrif-tooltip-block{
+  display: flex;
 }
 
 .tariff-tooltip::before {

@@ -1,0 +1,12 @@
+.sidebar{
+    min-width: 261px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+@media(max-width: 992px){
+    .sidebar{
+        min-width: unset;
+    }
+}

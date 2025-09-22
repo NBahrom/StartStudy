@@ -31,6 +31,7 @@
     min-height: 468px;
     display: flex;
     flex-direction: column;
+    background-color: var(--white);
 }
 
 .reviewTitle{
@@ -122,15 +123,36 @@
     height: 2px;
     background-color: #FFFFFF40;
     cursor: pointer;
+    position: relative;
+}
+
+.pagination span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #FFFFFF;
+    z-index: 2;
+    transition: 0s;
+}
+
+.pagination span:global(.swiper-pagination-bullet-active)::after{
+    content: '';
+    width: 100%;
+    transition: all var(--pagination-transition, 0.4s) linear;
 }
 
 .pagination span:global(.swiper-pagination-bullet-active){
-    background-color: #FFFFFF;
+    background-color: #FFFFFF40;
 }
+
 
 .next{
     position: relative;
 }
+
 
 @media (max-width: 992px) {
     .section{

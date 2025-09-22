@@ -130,10 +130,12 @@
 
 .subscribe-form_policy a {
   text-decoration: underline;
+  transition: .3s;
 }
 
 .subscribe-form_policy a:hover {
-  text-decoration: none;
+  transition: .3s;
+  text-decoration-color: transparent;
 }
 
 .contact_wrapper {
@@ -146,6 +148,7 @@
   max-width: 224px;
   display: flex;
   flex-direction: column;
+  margin-left: -6px;
 }
 
 .contact_title {
@@ -280,7 +283,7 @@
 }
 
 .footer_footer .footer_text {
-  width: 41%;
+  width: 50%;
 }
 
 .footer_text a {
@@ -440,6 +443,10 @@ br.br-mobile {
     gap: 10px;
     margin-bottom: 50px;
     
+  }
+
+  .contact_item{
+    margin-left: 0;
   }
 
   .footer_content {

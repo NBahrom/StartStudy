@@ -67,7 +67,9 @@
   justify-content: flex-end;
 }
 
-
+.section2Slide{
+  background-color: #fff;
+}
 
 .section-2_btn:global(.btn) {
   padding: 20px 32px;

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Swiper as SwiperType } from "swiper";
 
 import styles from "./AnimatedProgressCircle.module.css"

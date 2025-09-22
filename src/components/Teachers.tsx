@@ -1,16 +1,21 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import Video from "./UI/Video";
+import { useSwiperPauseOnHover } from "../util/useSwiperPauseOnHover ";
 
 import { Swiper as SwiperType } from "swiper";
 
 import teachers from "../data/teachers.json";
 
 import styles from "./Teachers.module.css";
+import 'swiper/css/effect-fade';
 
 export default function Teachers() {
   const [activeTeacher, setActiveTeacher] = useState(teachers[0]);
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  useSwiperPauseOnHover(swiperRef, `.${styles.section7SliderPagination}`);
 
   return (
     <section className={styles.section7}>
@@ -28,10 +33,11 @@ export default function Teachers() {
             {/* Left slider */}
             <div className={`section-col ${styles.section7ColLeft}`}>
               <Swiper
-                modules={[Pagination, Autoplay]}
+                modules={[Pagination, Autoplay, EffectFade]}
+                effect="fade"
                 speed={400}
                 loop={true}
-                autoplay={{ delay: 2500, disableOnInteraction: false }}
+                autoplay={{ delay: 4000, disableOnInteraction: true }}
                 slidesPerView={1}
                 pagination={{
                   clickable: true,
@@ -42,6 +48,7 @@ export default function Teachers() {
                   const index = swiper.realIndex;
                   setActiveTeacher(teachers[index]);
                 }}
+                onSwiper={(swiper: SwiperType)  => (swiperRef.current = swiper)}
                 className={styles.section7Slider}
               >
                 {teachers.map((teacher) => (
@@ -84,7 +91,11 @@ export default function Teachers() {
             </div>
 
             <div className={`section-col ${styles.section7ColRight}`}>
-              <Video imageSrc={activeTeacher.poster} videoSrc={activeTeacher.video} />
+              <Video 
+                imageSrc={activeTeacher.poster} 
+                videoSrc={activeTeacher.video} 
+                swiperRef={swiperRef}
+              />
             </div>
           </div>
         </div>

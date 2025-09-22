@@ -1,0 +1,45 @@
+.pagination{
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #02191D33;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.prev{
+    margin-right: 40px;
+}
+
+.next{
+    margin-left: 40px;
+}
+
+.page{
+    width: 40px;
+    height: 40px;
+    margin: 0 1px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    color: #02191D99;
+    align-items: center;
+}
+
+.page:global(.active){
+    color: #02191D;
+    background-color: #F9FAFB;
+}
+
+.next:global(.disabled),
+.prev:global(.disabled){
+    pointer-events: none;
+}
+
+
+@media(max-width: 767px){
+    .next,
+    .prev{
+        display: none;
+    }
+}

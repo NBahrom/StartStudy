@@ -1,12 +1,19 @@
-// import { createBrowserRouter, RouterProvider , Outlet} from 'react-router-dom';
+// import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { createHashRouter, RouterProvider, Outlet } from 'react-router-dom';
 
-import HomePage from './pages/Home';
-import LanguageCoursesPage from './pages/LanguageCourses';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchCategories } from "./store/languageSlice";
+import { AppDispatch } from "./store/store";
 
-import './global.css';
-import Testimonals from './pages/Testimonals';
-import ScrollToTop from './util/scrollToTop';
+import HomePage from "./pages/Home";
+import LanguageCoursesPage from "./pages/LanguageCourses";
+
+import "./global.css";
+import Testimonals from "./pages/Testimonals";
+import ScrollToTop from "./util/scrollToTop";
+import BlogArchive from "./pages/BlogArchive";
+// import BlogPost from './pages/BlogPost'
 
 function Layout() {
   return (
@@ -19,16 +26,22 @@ function Layout() {
 
 const router = createHashRouter([
   {
-    element: <Layout />,   
+    element: <Layout />,
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/language-courses", element: <LanguageCoursesPage /> },
       { path: "/testimonals", element: <Testimonals /> },
+      { path: "/blog", element: <BlogArchive /> },
     ],
   },
 ]);
 
 function App() {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(fetchCategories()); // load categories once
+  }, [dispatch]);
   return <RouterProvider router={router} />;
 }
 

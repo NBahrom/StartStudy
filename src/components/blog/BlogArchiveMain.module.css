@@ -1,0 +1,42 @@
+.popular{
+    padding: 60px 0;
+}
+
+.section{
+    overflow: hidden;
+    margin-bottom: 90px;
+}
+
+.posts{
+    width: 100%;
+}
+
+.innerBlock{
+    display: flex;
+    gap: 40px;
+}
+
+:global(#posts-top){
+    scroll-margin-top: 250px;
+}
+
+@media(max-width: 992px){
+    .section{
+        margin-bottom: 0;
+    }
+
+    .innerBlock{
+        display: flex;
+        flex-direction: column;
+    }
+
+    :global(#posts-top){
+        scroll-margin-top: 200px;
+    }
+}
+
+@media(max-width: 767px){
+    .popular{
+        padding: 40px 0 60px 0;
+    }
+}

@@ -1,13 +1,15 @@
 import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
 import { useMediaScreen } from "../util/useMediaScreen";
+import { useSwiperPauseOnHover } from "../util/useSwiperPauseOnHover ";
 
 import Video from "./UI/Video";
 import reviews from "../data/reviews.json";
 
 import styles from "./Reviews.module.css";
+
 import AnimatedProgressCircle from "./UI/AnimatedProgressCircle";
 
 export default function Reviews() {
@@ -16,8 +18,9 @@ export default function Reviews() {
   const [activeReview, setActiveReview] = useState(defaultReviews[0]);
 
   const swiperRef = useRef<SwiperType | null>(null);
-  const autoplayDelay = 2500;
+  const autoplayDelay = 4000;
 
+  useSwiperPauseOnHover(swiperRef, `.${styles.section9SliderPagination}`);
 
   return (
     <section className={styles.section9}>
@@ -47,7 +50,8 @@ export default function Reviews() {
             {/* LEFT: Slider */}
             <div className={`${styles.section9ColLeft} section-col`}>
               <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
+                modules={[Navigation, Pagination, Autoplay,EffectFade]}
+                effect="fade"
                 navigation={{
                   nextEl: `.section-9_slider_nav_next`,
                   prevEl: `.section-9_slider_nav_prev`,
@@ -70,6 +74,7 @@ export default function Reviews() {
                   swiperRef.current = swiper;
                   setActiveReview(defaultReviews[swiper.realIndex]);
                 }}
+                onSwiper={(swiper: SwiperType)  => (swiperRef.current = swiper)}
                 className={styles.section9Slider}
               >
                 {defaultReviews.map((review) => (
@@ -135,6 +140,7 @@ export default function Reviews() {
                 <Video
                   imageSrc={activeReview.poster}
                   videoSrc={activeReview.video}
+                  swiperRef={swiperRef}
                 />
               )}
             </div>

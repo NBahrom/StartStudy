@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
-import { useSwiperPauseOnHover } from "../util/useSwiperPauseOnHover ";
+// import { useSwiperPauseOnHover } from "../util/useSwiperPauseOnHover ";
 
 import { Swiper as SwiperType } from "swiper";
 
@@ -17,7 +17,7 @@ export default function ReviewsCzech() {
     const swiperRef = useRef<SwiperType | null>(null);
     const autoplayDelay = 4000;
 
-   useSwiperPauseOnHover(swiperRef, `.${styles.pagination}`);
+//    useSwiperPauseOnHover(swiperRef, `.${styles.pagination}`);
 
     return (
         <section className={styles.section}>

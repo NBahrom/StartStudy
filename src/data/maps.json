@@ -8,11 +8,11 @@
         "maps": [
             {
                 "name": "Google карты",
-                "link": "#"
+                "link": "https://maps.app.goo.gl/fttvDvKqXpV9vWiRA?g_st=ipc"
             },
             {
                 "name": "Яндекс карты",
-                "link": "#"
+                "link": "https://yandex.ru/maps/-/CLexV-YN"
             }
         ]
     },
@@ -25,15 +25,15 @@
         "maps": [
             {
                 "name": "Google карты",
-                "link": "#"
+                "link": "https://maps.app.goo.gl/JYttPfHTxEYZtQbf8?g_st=ipc"
             },
             {
                 "name": "Яндекс карты",
-                "link": "#"
+                "link": "https://yandex.ru/maps/org/239698621358/?ll=69.335495,41.346944&z=16"
             },
             {
                 "name": "2GIS",
-                "link": "#"
+                "link": "https://go.2gis.com/kc8ZR"
             }
         ]
     }

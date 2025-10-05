@@ -1,0 +1,238 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    margin-bottom: 60px;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6{
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 35px;
+    leading-trim: NONE;
+    line-height: 110.00000000000001%;
+    letter-spacing: -6%;
+}
+
+.content p {
+    color: #02191D99;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+}
+
+.content :global(.wp-block-group){
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.content img{
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.content blockquote{
+    padding-left: 22px;
+    border-left: 2px solid #CCF43B;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.content blockquote p{
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 28px;
+    leading-trim: NONE;
+    line-height: 140%;
+    letter-spacing: -3%;
+    color: var(--dark);
+}
+
+.content blockquote cite{
+    color: #02191D99;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+}
+
+.content :global(.wp-block-list) li{
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+    margin-left: 18px;
+    width: calc(100% - 18px);
+}
+
+.content :global(.conclusion) h6{
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 12px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+    text-transform: uppercase;
+    padding: 6px 11px;
+    background-color: #BFF61D;
+    width: fit-content;
+}
+
+.content :global(.conclusion) p{
+    color: #02191D;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+}
+
+.content :global(.conclusion){
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px;
+    background-color: #F5F5F5;
+}
+
+.tags{
+    display: flex;
+    gap: 6px;
+    margin-bottom: 60px;
+}
+
+.tags span{
+    padding: 4px 16px;
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+    border-radius: 100px;
+    border: 1px solid #02191D1A;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tags span:hover{
+    background-color: #02191D1A;
+    transition: all 0.3s ease;
+}
+
+.share{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.share > span{
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+}
+
+.shareInner{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icons{
+    display: flex;
+    gap: 6px;
+}
+
+.icons a{
+    width: 52px;
+    height: 52px;
+    background-color: #02191D;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: max-content;
+    transition: all 0.3s ease;
+}
+
+.icons a:hover{
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.copyLink{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    min-width: max-content;
+}
+
+.copyLink span{
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+
+}
+
+@media(max-width: 767px){
+    .content h1,
+    .content h2,
+    .content h3,
+    .content h4,
+    .content h5,
+    .content h6{
+        font-size: 28px;
+    }
+
+    .content blockquote{
+        padding-left: 20px;
+    }
+
+    .content blockquote p{
+        font-size: 20px;
+    }
+
+    .content :global(.conclusion){
+        padding: 28px;
+    }
+
+    .shareInner{
+        overflow-x: scroll;
+        padding: 0 35px;
+        margin: 0 -35px;
+    }
+
+    .shareInner::-webkit-scrollbar{
+        display: none;
+    }
+}

@@ -1,6 +1,7 @@
 import styles from './ModalForm.module.css';
 import { createPortal } from 'react-dom';
 import { useRef, useState } from 'react';
+import { sendTelegramMessage } from "../util/sendTelegramMessage"
 
 export default function ModalForm({ onClose }: { onClose: () => void }) {
   const [formError, setFormError] = useState(false);
@@ -9,21 +10,37 @@ export default function ModalForm({ onClose }: { onClose: () => void }) {
   const successRef = useRef<HTMLDivElement>(null);
 
   function validateForm(formData : FormData ) {
+    const nameRegex = /^[a-zA-Zа-яА-ЯёЁ\s]+$/;
+
     const name = formData.get("name") as string;
     const phone = formData.get("phone") as string;
-    return name && phone;
+    const message = formData.get("message") as string;
+    return nameRegex.test(name) && phone && message;
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-      const form = e.target as HTMLFormElement;
-      const formData = new FormData(form);
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const form = e.target as HTMLFormElement
+    const formData = new FormData(form)
+
     if (!validateForm(formData)) {
-      setFormError(true);
-      setTimeout(() => setFormError(false), 500);
-      return;
+      setFormError(true)
+      setTimeout(() => setFormError(false), 500)
+      return
     }
-    setSuccess(true);
+
+    const result = await sendTelegramMessage({
+      name: formData.get("name") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+      formTitle: "Главная форма",
+    })
+
+    if (result.success) {
+      setSuccess(true)
+    } else {
+      console.error(result.error)
+    }
   }
 
   return createPortal(

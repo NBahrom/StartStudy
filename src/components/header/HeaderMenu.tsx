@@ -8,16 +8,13 @@ export default function HeaderMenu({className}: {className?: string}) {
                     <Link to="/testimonals" className="header-menu_item_link">О нас</Link>
                 </li>
                 <li className="header-menu_item">
-                    <Link to="/language-courses" className="header-menu_item_link">Поддержка</Link>
+                    <Link to="/language-courses" className="header-menu_item_link">Программы</Link>
                 </li>
                 <li className="header-menu_item">
-                    <Link to="/blog" className="header-menu_item_link">Программы</Link>
+                    <Link to="/blog" className="header-menu_item_link">Блог</Link>
                 </li>
                 <li className="header-menu_item">
-                    <a href="#" className="header-menu_item_link">Проживание</a>
-                </li>
-                <li className="header-menu_item">
-                    <a href="#" className="header-menu_item_link">Партнерам</a>
+                    <a href="#" className="header-menu_item_link">Обратная связь</a>
                 </li>
             </ul>
         </nav>

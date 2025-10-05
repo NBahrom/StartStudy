@@ -8,25 +8,25 @@ import { Autoplay } from "swiper/modules";
 import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 import { useFetch } from "../../util/useFetch";
-import { useEffect } from 'react';
 import LoadingContent from '../UI/LoadingContent';
 
 export default function BlogArchiveShowcase() {
     const {isMobile} = useMediaScreen();
     const { current, categoryMap, loading } = useSelector((state: RootState) => state.language);
-    const categoryId = categoryMap[current];
+    const languageCategoryId = categoryMap[current];
+
+    const BIG_SIZE_CATEGORY_ID = process.env.REACT_APP_BIG_SIZE_CATEGORY_ID;
 
     const { data: posts, loading: loadingPost } = useFetch<WPPost[]>({
         endpoint: "posts",
-        params: { _embed: true, categories: categoryMap[current], per_page: 3 },
-        enabled: !loading && Boolean(categoryId)
+        params: { 
+            _embed: true, 
+            categories: `${languageCategoryId},${BIG_SIZE_CATEGORY_ID}`,
+            cat_relation: "AND",   // activates PHP filter
+            per_page: 3
+        },
+        enabled: !loading && Boolean(languageCategoryId)
     });
-
-    useEffect(() => {
-        fetch('https://blog.startstudy.cz/wp-json/wp/v2/posts')
-            .then(data =>  data.json())
-            .then(data => console.log(data))
-    }, [])
 
 
     if (loadingPost) return <section className={styles.section}><LoadingContent /></section>;
@@ -36,25 +36,27 @@ export default function BlogArchiveShowcase() {
             <div className="container-wide">
                 {!isMobile ? (
                 <div className={styles.showcaseBlock}>
-                    {posts.map((post) => (
-                        <Link to={`/blog/${post.slug}`} className={styles.post}>
+                    {posts?.map((post) => (
+                        <div key={post.id}  className={styles.post}>
                             {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
-                                <>
+                                <Link to={`/blog/${post.slug}`}>
                                     <img
                                         src={post._embedded["wp:featuredmedia"][0].source_url}
                                         alt={post.title.rendered}
                                     />
                                     <div className={styles.mask}></div>
-                                </>
+                                </Link>
                             )}
                             <BlogIndividualTags
                                 className={styles.tags}
                                 tags={
-                                    post._embedded?.["wp:term"]?.[1]?.map((tag) => tag.name) || []
+                                    post._embedded?.["wp:term"]?.[1] || []
                                 } 
                             />
-                            <h2>{post.title.rendered}</h2>
-                        </Link>
+                            <Link to={`/blog/${post.slug}`}>
+                                <h2>{post.title.rendered}</h2>
+                            </Link>
+                        </div>
                     ))}
                 </div>
                 ): (
@@ -66,26 +68,28 @@ export default function BlogArchiveShowcase() {
                         autoplay={{ delay: 4000 }}
                         className={styles.slider}
                     >
-                        {posts.map((post) => (
-                            <SwiperSlide className={styles.slide}>
-                                <Link to={`/blog/${post.slug}`} className={styles.post}>
+                        {posts?.map((post) => (
+                            <SwiperSlide key={post.id} className={styles.slide}>
+                                <div className={styles.post}>
                                     {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
-                                        <>
+                                        <Link to={`/blog/${post.slug}`}>
                                             <img
                                                 src={post._embedded["wp:featuredmedia"][0].source_url}
                                                 alt={post.title.rendered}
                                             />
                                             <div className={styles.mask}></div>
-                                        </>
+                                        </Link>
                                     )}
                                     <BlogIndividualTags
                                         className={styles.tags}
                                         tags={
-                                            post._embedded?.["wp:term"]?.[1]?.map((tag) => tag.name) || []
+                                            post._embedded?.["wp:term"]?.[1] || []
                                         } 
                                     />
-                                    <h2>{post.title.rendered}</h2>
-                                </Link>
+                                    <Link to={`/blog/${post.slug}`}>
+                                        <h2>{post.title.rendered}</h2>
+                                    </Link>
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>

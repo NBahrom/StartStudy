@@ -111,7 +111,7 @@ export default function Reviews() {
                 className={`${styles.section9SliderNav} section-9_slider_nav_next relative`}
               >
                 {!isTablet && (
-                  <AnimatedProgressCircle autoplayDelay={autoplayDelay} swiperRef={swiperRef} />
+                  <AnimatedProgressCircle className={styles.animatedProgress} autoplayDelay={autoplayDelay} swiperRef={swiperRef} />
                 )}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -129,9 +129,6 @@ export default function Reviews() {
                 </svg>
               </div>
 
-              <div
-                className={`slider_pagination ${styles.section9SliderPagination}`}
-              ></div>
             </div>
 
             {/* RIGHT: Video */}
@@ -143,6 +140,9 @@ export default function Reviews() {
                   swiperRef={swiperRef}
                 />
               )}
+              <div
+                className={`slider_pagination ${styles.section9SliderPagination}`}
+              ></div>
             </div>
           </div>
         </div>

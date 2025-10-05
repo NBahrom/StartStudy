@@ -15,4 +15,11 @@
     line-height: 150%;
     letter-spacing: -3%;
     color: var(--dark-50);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tagsBlock span:hover{
+    transition: all 0.3s ease;
+    color: rgba(2, 25, 29, 0.759);
 }

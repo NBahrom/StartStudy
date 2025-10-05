@@ -120,7 +120,7 @@
 }
 
  .slider_pagination.swiper-pagination-bullets .swiper-pagination-bullet:hover{
-    height: 4px;
+      background-color: #CCF43B;
  }
 
   .slider_pagination.swiper-pagination-bullets .swiper-pagination-bullet::after{

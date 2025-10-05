@@ -1,0 +1,25 @@
+.loading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     height: 100vh;
+}
+
+.spinner svg{
+    width: 64px ;
+    height: 64px;
+}
+
+.notFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 35px;
+    leading-trim: NONE;
+    line-height: 110.00000000000001%;
+    letter-spacing: -6%;
+    height: 100vh;
+}

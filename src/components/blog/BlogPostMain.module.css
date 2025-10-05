@@ -1,0 +1,29 @@
+.section{
+    margin-bottom: 90px;
+    margin-top: 75px;
+}
+
+.innerBlock{
+    display: flex;
+    gap: 40px;
+}
+
+@media(max-width: 992px){
+    .section{
+        overflow: hidden;
+        margin-bottom: 60px;
+        margin-top: 60px;
+    }
+
+    .innerBlock{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 767px){
+    .section{
+        margin-bottom: 40px;
+        margin-top: 35px;
+    }
+}

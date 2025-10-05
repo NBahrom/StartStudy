@@ -9,8 +9,8 @@ interface UseFetchOptions {
 
 export function useFetch<T>({ endpoint, params = {}, enabled = true }: UseFetchOptions) {
   const apiUrl = process.env.REACT_APP_API_URL;
-  const [data, setData] = useState<T>([] as unknown as T);
-  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const [totalPages, setTotalPages] = useState<number>(1);
   const [totalItems, setTotalItems] = useState<number>(0);

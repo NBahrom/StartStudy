@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { WPCategory } from "../types/wordpress";
-export type Language = "ru" | "en" | "cz";
+export type Language = "ru" | "en" | "cz" | string;
 
 interface LanguageState {
   current: Language;
   categoryMap: Partial<Record<Language, number>>;
-  categories: WPCategory[];   
+  categories: WPCategory[];     
   loading: boolean;
   languages: Language[];
 }

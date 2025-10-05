@@ -18,7 +18,7 @@ export default function DropDown() {
         </button>
         <ul className="dropdown__list">
           {languages.map(lang => (
-            <li onClick={() => dispatch(setLanguage(lang))} className={`dropdown__list-item ${lang == current ? "isActiveLangBtn" : ' '}`}>{lang}</li>
+            <li key={lang} onClick={() => dispatch(setLanguage(lang))} className={`dropdown__list-item ${lang == current ? "isActiveLangBtn" : ' '}`}>{lang}</li>
           ))}
         </ul>
         <input className="dropdown__input hidden" type="text"/>

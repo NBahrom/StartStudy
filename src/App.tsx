@@ -13,6 +13,7 @@ import "./global.css";
 import Testimonals from "./pages/Testimonals";
 import ScrollToTop from "./util/scrollToTop";
 import BlogArchive from "./pages/BlogArchive";
+import BlogPost from './pages/BlogPost';
 // import BlogPost from './pages/BlogPost'
 
 function Layout() {
@@ -32,6 +33,7 @@ const router = createHashRouter([
       { path: "/language-courses", element: <LanguageCoursesPage /> },
       { path: "/testimonals", element: <Testimonals /> },
       { path: "/blog", element: <BlogArchive /> },
+      { path: "/blog/:slug", element: <BlogPost /> },
     ],
   },
 ]);

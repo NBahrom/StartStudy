@@ -28,16 +28,11 @@ export default function Banner() {
             </h1>
 
             <div className={styles.heroText1}>
-              Летняя школа в Праге представляет собой <br />
-              захватывающий опыт, сочетающий обучение <br />
-              и путешествия для молодых людей.
+              Годовой курс чешского языка  предназначен для <br />
+              будущих студентов, планирующих обучение в <br /> 
+              государственных вузах Чехии.
             </div>
 
-            <div className={styles.heroText2}>
-              Дилдора М. студентка Czech University <br />
-              of Life Sciences. Окончила <br />
-              языковые курсы StartStudy в г. Прага
-            </div>
           </div>
 
           {/* Tab 2 */}

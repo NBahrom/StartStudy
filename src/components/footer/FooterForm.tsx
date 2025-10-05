@@ -59,7 +59,7 @@ export default function FooterForm() {
             </form>
 
             <div className="subscribe-form_policy section-text-2">
-                <span data-footer-policy-1="">Нажимая кнопку , вы соглашаетесь <br/> с </span>
+                <span data-footer-policy-1="">Нажимая кнопку, вы соглашаетесь <br/> с </span>
                 <a data-footer-policy-2="" target="_blank"
                     href="https://startstudy.cz/privacy-policy.pdf">Политикой в отношении обработки <br/>
                     персональных данных</a>

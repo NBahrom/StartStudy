@@ -1,5 +1,5 @@
 .section{
-    margin-bottom: 75px;
+    margin-bottom: 60px;
     min-height: 772px;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .post:first-of-type img{
-    height: 675px;
+    height: calc(100% - 97px);
 }
 
 @media(max-width: 992px){

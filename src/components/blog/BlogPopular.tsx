@@ -18,19 +18,19 @@ export default function BlogPopular() {
         enabled: !loading && Boolean(currentCategoryId)
     });
 
-    const filtered = posts.filter(
+    const filtered = posts?.filter(
         (post: WPPost) => post.categories.includes(currentCategoryId as number)
     );
 
 
-    // if (loading) return <h1>Loading categories...</h1>;
+    // if (loadingPost) return <h1>Loading categories...</h1>;
 
      return(
         <div className={styles.popular}>
             <h2 className={styles.title}>Популярное</h2>
 
-            {filtered.map(post => (
-                <Link to={`/blog/${post.slug}`} className={styles.popularPost}>
+            {filtered?.map(post => (
+                <Link key={post.id} to={`/blog/${post.slug}`} className={styles.popularPost}>
                     <span>{post.title.rendered}</span>
                     <img src={svgArrowRight} alt="arrow right" />
                 </Link>

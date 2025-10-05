@@ -1,6 +1,7 @@
 import styles from "./BlogArchivePagination.module.css";
 import { HashLink as Link } from 'react-router-hash-link';
 
+
 export type PageItem = number | "...";
 export default function BlogArchivePagination({
   page,

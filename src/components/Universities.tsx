@@ -1,19 +1,28 @@
+// Universities.tsx
 import { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import data from "../data/universities.json";
 
 import styles from "./Universities.module.css";
+import AnimatedProgressCircle from "./UI/AnimatedProgressCircle";
+import { useMediaScreen } from "../util/useMediaScreen";
 
 export default function Universities() {
-  const [activeTab, setActiveTab] = useState<string>(data.tabs[0].id);
-  const [maxHeight, setMaxHeight] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [maxHeight, setMaxHeight] = useState(0);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
-
+  const {isMobile} = useMediaScreen();
+  const autoplayDelay = 5000;
+  
   useEffect(() => {
     const heights = contentRefs.current.map((el) => el?.scrollHeight || 0);
     setMaxHeight(Math.max(...heights));
   }, []);
+
+  const handleNextTab = () => {
+    setActiveIndex((prev) => (prev + 1) % data.length);
+  };
 
   return (
     <section className={styles.section6}>
@@ -24,13 +33,22 @@ export default function Universities() {
               <div className="main-tag">учебное заведение</div>
 
               <div className={styles.section6Tabs}>
-                {data.tabs.map((tab) => (
+                {data.map((tab, i) => (
                   <button
                     key={tab.id}
-                    className={`${styles.section6Tab} ${activeTab === tab.id ? "active" : ""}`}
-                    onClick={() => setActiveTab(tab.id)}
+                    className={`${styles.section6Tab} ${
+                      activeIndex === i ? "active" : ""
+                    }`}
+                    onClick={() => setActiveIndex(i)}
                   >
                     {tab.title}
+                    {activeIndex === i && !isMobile &&  (
+                      <AnimatedProgressCircle
+                        autoplayDelay={autoplayDelay}
+                        onComplete={handleNextTab}
+                        className={styles.progressCircle}
+                      />
+                    )}
                   </button>
                 ))}
               </div>
@@ -40,43 +58,52 @@ export default function Universities() {
               className={`section-col ${styles.section6ColRight}`}
               style={{ minHeight: maxHeight }}
             >
-              {data.tabs.map((tab, i) => (
+              {data.map((tab, i) => (
                 <div
                   key={tab.id}
-                  ref={(el) => {
-                    contentRefs.current[i] = el;
-                  }}
-                  className={`${styles.section6Content} ${activeTab === tab.id ? "active" : ""}`}
+                  ref={(el) => (contentRefs.current[i] = el)}
+                  className={`${styles.section6Content} ${
+                    activeIndex === i ? "active" : ""
+                  }`}
                 >
-                  <div className={`section-title ${styles.section6Title}`}>{tab.title}</div>
-                  <div className={`section-text-2 ${styles.section6Text}`}>{tab.content}</div>
+                  <div className={`section-title ${styles.section6Title}`}>
+                    {tab.title}
+                  </div>
+                  <div className={`section-text-2 ${styles.section6Text}`}>
+                    {tab.content}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <Swiper
-            className={`slider-1 ${styles.slider1}`}
-            modules={[Navigation]}
-            speed={400}
-            spaceBetween={10}
-            loop={true}
-            centeredSlides={true}
-            navigation={{ nextEl: ".home-next", prevEl: ".home-prev" }}
-            breakpoints={{
-              0: { slidesPerView: 1.18, slidesOffsetBefore: 25 },
-              768: { slidesPerView: 1.18 },
-            }}
-          >
-            {data.slides.map((slide, index) => (
-              <SwiperSlide
-                key={index}
-                className={`slider-1_item ${styles.slider1Item}`}
-              >
-                <img src={slide.src} alt={slide.alt} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {data.map((tab, i) => (
+            <Swiper
+              key={tab.id}
+              className={`slider-1 ${styles.slider1} ${
+                activeIndex === i ? "active" : ""
+              }`}
+              modules={[Navigation]}
+              speed={400}
+              spaceBetween={10}
+              loop={true}
+              centeredSlides={true}
+              navigation={{ nextEl: ".home-next", prevEl: ".home-prev" }}
+              breakpoints={{
+                0: { slidesPerView: 1.18, slidesOffsetBefore: 25 },
+                768: { slidesPerView: 1.18 },
+              }}
+            >
+              {tab.slides.map((slide, index) => (
+                <SwiperSlide
+                  key={index}
+                  className={`slider-1_item ${styles.slider1Item}`}
+                >
+                  <img src={slide.src} alt={slide.alt} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ))}
         </div>
       </div>
     </section>

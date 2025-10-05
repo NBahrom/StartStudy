@@ -1,4 +1,10 @@
 .sidebar{
+    position: sticky;
+    top: 115px;
+    height: fit-content;
+}
+
+.sidebarInner{
     min-width: 261px;
     display: flex;
     flex-direction: column;
@@ -8,5 +14,8 @@
 @media(max-width: 992px){
     .sidebar{
         min-width: unset;
+        position: unset;
+        top: unset;
+        margin-bottom: 0;
     }
 }

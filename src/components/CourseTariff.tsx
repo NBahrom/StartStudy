@@ -55,7 +55,7 @@ export default function CourseTariff() {
                 />
               </svg>
               <div className={styles.tariffTooltipContent}>
-                Бесплатный полный визовый сервис от нашего визового партнёра Czechpoint
+                Получите скидку в $1000 за 100% оплаты стоимости обучения
               </div>
             </div>
           </div>

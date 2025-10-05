@@ -5,11 +5,16 @@
 /* we target the .section-3_col element (nth-child rules remain) */
 .section-3_col:nth-child(1) {
   width: 51%;
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+  margin-bottom: 30px;
 }
 
 .section-3_col:nth-child(2) {
   width: 49%;
 }
+
 
 .section-3_text-1:global(.section-text-1){
   font-size: 16px;
@@ -68,6 +73,12 @@
 @media (max-width: 992px) {
   .section-3 {
     padding: 80px 0 50px;
+  }
+
+  .section-3_col:nth-child(1) {
+    position: unset;
+    top: unset;
+    margin-bottom: 0px;
   }
 
   .section-3_title {

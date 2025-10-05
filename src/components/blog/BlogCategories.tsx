@@ -5,12 +5,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import { setSelectedTag } from "../../store/blogCategoriesSlice";
 import LoadingContent from '../UI/LoadingContent';
-
+import { useHandleCategory } from "../../hook/useHandleCategory";
 
 export default function BlogCategories() {
-    const dispatch = useDispatch();
     const { current, loading } = useSelector((state: RootState) => state.language);
     const selectedTag = useSelector((state: RootState) => state.blogCategories.selectedTag);
+    const dispatch = useDispatch();
 
     const { data: tags, loading: loadingTags } = useFetch<WPTag[]>({
         endpoint: "tags",
@@ -18,7 +18,9 @@ export default function BlogCategories() {
         enabled: !loading 
     });
 
-    const filteredTags = tags.filter(tag => tag.slug.endsWith(`-${current}`));
+    const handleCategory = useHandleCategory();
+
+    const filteredTags = tags?.filter(tag => tag.slug.endsWith(`-${current}`));
 
     if (loadingTags) return <section className={styles.section}><LoadingContent /></section>;
 
@@ -30,11 +32,11 @@ export default function BlogCategories() {
             >
                 Все записи блога
             </span>
-            {filteredTags.map(tag => (
+            {filteredTags?.map(tag => (
                 <span
                     key={tag.id}
                     className={selectedTag?.id === tag.id ? styles.active : ""}
-                    onClick={() => dispatch(setSelectedTag(tag))}
+                    onClick={() => handleCategory(tag)}
                 >
                     {tag.name}
                 </span>

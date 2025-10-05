@@ -3,7 +3,6 @@
 }
 
 .section{
-    overflow: hidden;
     margin-bottom: 90px;
 }
 
@@ -14,6 +13,7 @@
 .innerBlock{
     display: flex;
     gap: 40px;
+    position: relative;
 }
 
 :global(#posts-top){
@@ -23,6 +23,7 @@
 @media(max-width: 992px){
     .section{
         margin-bottom: 0;
+        overflow: hidden;
     }
 
     .innerBlock{

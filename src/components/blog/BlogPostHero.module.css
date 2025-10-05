@@ -1,0 +1,140 @@
+.hero{
+    padding: 90px 0;
+    background-color: var(--color-1);
+    min-height: 690px;
+}
+
+.heroInner{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.date{
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+    color: var(--dark);
+    margin-bottom: 32px;
+}
+
+.title{
+    color: var(--dark);
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 40px;
+    leading-trim: NONE;
+    line-height: 110.00000000000001%;
+    letter-spacing: -6%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}   
+
+.description{
+    color: var(--dark-50);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+    margin-bottom: 24px;
+}
+
+.author{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.authorImg{
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.authorName{
+    display: flex;
+    flex-direction: column;
+}
+
+.authorName p{
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 140%;
+    letter-spacing: -3%;
+}   
+
+.authorName span{
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 140%;
+    letter-spacing: -3%;
+    color: var(--dark-50);
+}
+
+.img{
+    min-width: 470px;
+    width: 100%;
+    height: 510px;
+    object-fit: cover;
+}
+
+@media(max-width: 992px){
+    .hero{
+        padding: 60px 0;
+        min-height: 739px;
+    }
+
+    .heroInner{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .title{
+        font-size: 30px;
+    }
+
+    .authorImg{
+        width: 36px;
+        height: 36px;
+        object-fit: cover;
+    }
+
+    .img{
+        min-width: unset;
+        width: 100%;
+        height: 300px;
+    }
+
+    .imgWrapper{
+        width: 100%;
+    }
+}
+
+@media(max-width: 767px){
+    .title{
+        font-size: 25px;
+    }
+
+    .hero{
+        min-height: 817px;
+    }
+
+    .authorName span{
+        display: none;
+    }
+}

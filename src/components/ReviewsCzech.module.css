@@ -148,9 +148,16 @@
     background-color: #FFFFFF40;
 }
 
-
+.prev,
 .next{
     position: relative;
+    transition: all 0.3s ease;
+}
+
+.prev:hover,
+.next:hover{
+    background-color: #eae8e8;
+    transition: all 0.3s ease;
 }
 
 

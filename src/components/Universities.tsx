@@ -76,36 +76,24 @@ export default function Universities() {
               ))}
             </div>
           </div>
-
-          {data.map((tab, i) => (
-            <Swiper
-              key={tab.id}
-              className={`slider-1 ${styles.slider1} ${
-                activeIndex === i ? "active" : ""
-              }`}
-              modules={[Navigation]}
-              speed={400}
-              spaceBetween={10}
-              loop={true}
-              centeredSlides={true}
-              navigation={{ nextEl: ".home-next", prevEl: ".home-prev" }}
-              breakpoints={{
-                0: { slidesPerView: 1.18, slidesOffsetBefore: 25 },
-                768: { slidesPerView: 1.18 },
-              }}
-            >
-              {tab.slides.map((slide, index) => (
-                <SwiperSlide
-                  key={index}
-                  className={`slider-1_item ${styles.slider1Item}`}
-                >
-                  <img src={slide.src} alt={slide.alt} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          ))}
         </div>
       </div>
+
+      {data.map((tab, i) => (
+        <div className={`${styles.slider1} ${
+            activeIndex === i ? "active" : ""
+          }`} key={tab.id}>
+
+          {tab.slides.map((slide, index) => (
+            <div
+              key={index}
+              className={styles.slider1Item}
+            >
+              <img src={slide.src} alt={slide.alt} />
+            </div>
+          ))}
+        </div>
+      ))}
     </section>
   );
 }

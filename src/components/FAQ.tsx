@@ -4,14 +4,14 @@ import Spoiler from "./UI/Spoiler";
 
 import styles from "./FAQ.module.css";
 
-export default function FAQ() {
+export default function FAQ({styleMode} : {styleMode?: string}) {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const [showAll, setShowAll] = useState(false);
 
   const visibleFaqs = showAll ? faqData : faqData.slice(0, 5);
 
   return (
-    <section className={styles.section10}>
+    <section className={`${styles.section10} ${styleMode === "grey" ? styles.grey : ""}`}>
       <div className="container-wide">
         <div className={styles.section10Inner}>
           <h2 data-section7-title="" className={`section-title ${styles.section10Title}`}>

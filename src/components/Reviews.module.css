@@ -1,11 +1,21 @@
 .section-9{
   padding: 90px 0;
+  background-color: var(--color-1);
 }
 
 .section-9_head{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 60px;
+}
+
+.section9HeadContent{
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
 }
 
 
@@ -19,10 +29,11 @@
 
 .section-9_text{
   max-width: 468px;
+  text-align: center;
 }
 
 .section-9_reviews{
-  background-color: #F5F5F5;
+  background-color: var(--white);
   padding: 70px;
 }
 
@@ -48,7 +59,7 @@
 }
 
 .section-9_slide{
-  background-color: #F5F5F5;
+  background-color: var(--white);
 }
 
 .section-9_col-left{
@@ -101,6 +112,7 @@
 .section-9_slider_pagination:global(.slider_pagination):global(.swiper-pagination-bullets) :global(.swiper-pagination-bullet):global(.swiper-pagination-bullet-active)::after{
     content: '';
     width: 100%;
+    transition: all var(--pagination-transition-review, 0.4s) linear;
 }
 
 .section-9_slider_nav{
@@ -119,10 +131,12 @@
 
 :global(.section-9_slider_nav_prev){
   left: 0;
+  background-color: var(--color-1);
 }
 
 :global(.section-9_slider_nav_next){
   left: 79px;
+    background-color: var(--color-1);
 }
 
 
@@ -166,10 +180,6 @@
 @media(max-width:767px){
     .section-9_head{
     flex-direction: column;
-  }
-
-  .section-9_title{
-    margin-bottom: 25px;
   }
 
   .section-9_slide{

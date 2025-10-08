@@ -1,7 +1,6 @@
 import AboutUs from "../components/About-us";
 import AboutCzech from "../components/AboutCzech";
 import Hero from "../components/Hero";
-import Hostels from "../components/Hostels";
 import Layout from "../components/Layout";
 import OptionsOfStudy from "../components/OptionsOfStudy";
 import Programms from "../components/programs/Programs";
@@ -25,9 +24,8 @@ export default function Index() {
           <Programms />
           <Universities />
           <Teachers />
-          <Hostels />
           <Reviews />
-          <FAQ />
+          <FAQ styleMode="grey" />
           <ArticlesSection />
       </Layout>      
     </>

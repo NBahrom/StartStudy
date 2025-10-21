@@ -1,0 +1,31 @@
+.partnersHead{
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.partnersHead p{
+    color: var(--dark-50);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 140%;
+    letter-spacing: -3%;
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+}
+
+.partners{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 50px;
+    column-gap: 20px;
+}

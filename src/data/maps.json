@@ -2,6 +2,7 @@
     {
         "id":"1",
         "location": "czech",
+        "image": "images/czech_loc_img.png",
         "title": "Офис в Чехии",
         "textLocation": "Freyova 82/27, 190 00, Praha 9-Vysočany, Czechia",
         "telNumber": "(+420) 725-073-055",
@@ -19,6 +20,7 @@
     {
         "id": "2",
         "location": "uzb",
+        "image": "images/uzb_loc_img.jpg",
         "title": "Офис в Узбекистане",
         "textLocation": "Узбекистан, г. Ташкент 3-я ул. Навнихол, 7",
         "telNumber": "(+998) 95 145-55-53",

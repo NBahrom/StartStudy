@@ -154,11 +154,12 @@ input[type='number'] {
   --accent: #BFF61D;
   --color-1: #F5F5F5;
   --color-2: #EAEAEA;
+  --color-3: #F9F9F9;
   --dark: #02191D;
   --dark-10: rgb(2, 25, 29, 0.1);
   --dark-20: rgb(2, 25, 29, 0.1);
   --dark-40: rgb(2, 25, 29, 0.4);
-  --dark-50: rgb(2, 25, 29, 0.5);
+  --dark-50: #02191D80;
   --transition: 0.2s ease-in-out;
   --shadow: 0 24px 134px -30px rgba(0, 62, 48, 0.14);
 }

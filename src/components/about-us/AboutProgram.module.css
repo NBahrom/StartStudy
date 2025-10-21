@@ -1,0 +1,29 @@
+.header{
+    max-width: 715px;
+    padding-bottom: 60px;
+}
+
+.title{
+    font-size: 35px;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+    border-top: 1px dashed #02191D33;
+}
+
+.textBlock{
+    max-width: 490px;
+}
+
+.textBlock p{
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: -3%;
+    color: var(--dark);
+}

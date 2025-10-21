@@ -1,0 +1,23 @@
+.heroSection{
+    padding: 90px 0px;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroTitle{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.img{
+    max-width: 1000px;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}

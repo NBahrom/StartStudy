@@ -1,0 +1,13 @@
+.title{
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 40px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: -6%;
+}
+
+.title span{
+    color: var(--dark-40);
+}

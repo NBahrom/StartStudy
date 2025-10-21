@@ -1,0 +1,46 @@
+.list{
+    padding: 40px 0px;
+    border-top: 1px dashed #02191D33;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list:last-of-type{
+    padding-bottom: 0;
+}
+
+.listTitle{
+    display: flex;
+    gap: 10px;
+}
+
+.listTitle h3{
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 22px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -3%;
+}
+
+.listTitle span{
+    color: var(--dark);
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 22px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -3%;
+}
+
+.text{
+    color: var(--dark);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 140%;
+    letter-spacing: -3%;
+    max-width: 490px;
+}   

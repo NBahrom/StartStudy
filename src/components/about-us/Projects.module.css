@@ -1,0 +1,76 @@
+.innerDiv{
+    padding: 90px 0;
+    max-width: 1320px;
+    margin: 0 auto;
+    background-color: var(--color-1);
+}
+
+.title{
+    font-size: 35px;
+    max-width: 485px;
+    margin-bottom: 40px;
+}
+
+.projects{
+    padding-top: 60px;
+    border-top: 1px dashed #02191D33;
+    display: flex; 
+}
+
+.projectCard{
+    padding: 0 44px;
+    border-right: 1px dashed #02191D33;
+}
+
+.projectCardInner{
+    display: flex;
+    flex-direction: column;
+    max-width: 184px;
+}
+
+.projectCard:first-of-type{
+    padding-left: 0;
+}
+
+.projectCard:last-of-type{
+    border-right: none;
+    padding-right: 0;
+}
+
+.iconWrapper{
+    width: 66px;
+    height: 66px;
+    margin-bottom: 40px;
+    background-color: var(--dark);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconWrapper img{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.projectCard h3{
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -5%;
+    color: var(--dark);
+    margin-bottom: 16px;
+}
+
+.projectCard p{
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 140%;
+    letter-spacing: -5%;
+    color: var(--dark-50);
+}

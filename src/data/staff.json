@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Далер",
+        "surname": "Абдурахманов",
+        "position": "Founder, CEO",
+        "image": "images/staff/person-1.png"
+    },
+        {
+        "id": 2,
+        "name": "Махина",
+        "surname": "Худойкулова",
+        "position": "Менеджер по работе со студентами",
+        "image": "images/staff/person-2.png"
+    },
+        {
+        "id": 3,
+        "name": "Муниса",
+        "surname": "Хамдамова",
+        "position": "Менеджер по работе с клиентами",
+        "image": "images/staff/person-3.png"
+    },
+        {
+        "id": 4,
+        "name": "Ильмира ",
+        "surname": "Афлятунова",
+        "position": "Отдел переводов и документов",
+        "image": "images/staff/person-4.png"
+    },
+        {
+        "id": 5,
+        "name": "Бекзод",
+        "surname": "Курбанов",
+        "position": "Душевный покой босса",
+        "image": "images/staff/person-5.png"
+    },
+        {
+        "id": 6,
+        "name": "Нафосат",
+        "surname": "Максудова",
+        "position": "Руководитель визового отдела",
+        "image": "images/staff/person-6.png"
+    },
+        {
+        "id": 7,
+        "name": "Маргарита ",
+        "surname": "",
+        "position": "Отдел переводов и документов",
+        "image": "images/staff/person-7.png"
+    },
+        {
+        "id": 8,
+        "name": "Алана",
+        "surname": "",
+        "position": "Продление виз и нострификация",
+        "image": "images/staff/person-7.png"
+    },
+        {
+        "id": 9,
+        "name": "Рустам",
+        "surname": "Рахманов",
+        "position": "Мастер на все руки",
+        "image": "images/staff/person-7.png"
+    }
+]

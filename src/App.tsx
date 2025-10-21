@@ -14,6 +14,7 @@ import Testimonals from "./pages/Testimonals";
 import ScrollToTop from "./util/scrollToTop";
 import BlogArchive from "./pages/BlogArchive";
 import BlogPost from './pages/BlogPost';
+import AboutUs from './pages/About-us';
 // import BlogPost from './pages/BlogPost'
 
 function Layout() {
@@ -32,6 +33,7 @@ const router = createHashRouter([
       { path: "/", element: <HomePage /> },
       { path: "/language-courses", element: <LanguageCoursesPage /> },
       { path: "/testimonals", element: <Testimonals /> },
+      { path: "/about-us", element: <AboutUs /> },
       { path: "/blog", element: <BlogArchive /> },
       { path: "/blog/:slug", element: <BlogPost /> },
     ],

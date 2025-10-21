@@ -25,7 +25,7 @@ export default function ProgramsSingle({title, from, to, fullPrice, dividedPrice
         if (!priceRef.current) return;
 
         const endVal = isFullPrice ? fullPrice : dividedPrice;
-
+        
         countUpInstance.current = new CountUp(priceRef.current, endVal, {
             plugin: new Odometer({ duration: 1.5, lastDigitDelay: 0 }),
             startVal: !isFullPrice ? fullPrice : dividedPrice,

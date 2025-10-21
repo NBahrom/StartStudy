@@ -1,0 +1,44 @@
+.counterItem{
+    padding: 0 88px;
+    border-right: 1px dashed #02191D33;
+    width: 100%;
+}
+
+.counterItem:first-of-type{
+    padding-left: 0;
+}
+
+.counterItem:last-of-type{
+    border-right: none;
+    padding-right: 0;
+}
+
+.counterItemInner{
+    max-width: 215px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.counterNumber{
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 40px;
+    leading-trim: NONE;
+    line-height: 70%;
+    letter-spacing: -6%;
+    text-align: center;
+    color: var(--dark);
+}
+
+.counterLabel{
+    color: var(--dark-50);
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 130%;
+    letter-spacing: -3%;
+    text-align: center;
+}
